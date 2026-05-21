@@ -1,0 +1,11 @@
+package traning.iqgateway.repository;
+
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+import com.iqgateway.model.ClaimsEO;
+
+@Repository
+public interface ClaimsRepository extends MongoRepository<ClaimsEO, Integer> {
+    // CRUD & findAllById etc are inherited

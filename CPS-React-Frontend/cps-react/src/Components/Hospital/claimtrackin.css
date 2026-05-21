@@ -1,0 +1,363 @@
+/* Container */
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background-color: #d9dce0;
+  color: #FFFFFF;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 10px;
+  border: 2px solid #708090;
+  border-radius: 6px;
+  font-size: 16px;
+  min-width: 200px;
+  outline: none;
+}
+
+.filterSelect {
+  padding: 10px;
+  border: 2px solid #708090;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  outline: none;
+}
+
+/* Claims Grid */
+.claimsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.claimCard {
+  border: 2px solid #708090;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.claimCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.claimHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.claimId {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1A3E72;
+}
+
+.statusBadge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* You will need to add dynamic background-color via inline style for statusBadge */
+
+/* Claim Details */
+.claimDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.detailLabel {
+  font-weight: bold;
+  color: #708090;
+}
+
+.detailValue {
+  color: #1A3E72;
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: bold;
+  color: #008080;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+}
+
+.modalHeader {
+  background-color: rgba(44, 119, 68, 0.553);
+  color: #000000;
+  padding: 20px 30px;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modalSubtitle {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.modalBody {
+  padding: 30px;
+}
+
+/* Stepper */
+.stepperContainer {
+  margin-bottom: 30px;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 120px;
+}
+
+.stepCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  background-color: #E0E0E0; /* default */
+  color: #666; /* default */
+}
+
+/* You will need to add dynamic background-color and color inline or via conditional classes */
+
+.stepLabel {
+  font-size: 12px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #666; /* default */
+}
+
+/* Step connector */
+.stepConnector {
+  height: 2px;
+  flex: 1;
+  background-color: #E0E0E0;
+  margin: 0 10px;
+  margin-bottom: 20px;
+}
+
+.stepConnectorActive {
+  background-color: #4285F4;
+}
+
+/* Step content */
+.stepContent {
+  background-color: #F8F9FA;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+  min-height: 200px;
+}
+
+.stepContentTitle {
+  color: #1A3E72;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* Info grid */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.infoItem {
+  background-color: #FFFFFF;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.infoValue {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Buttons */
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #E0E0E0;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton {
+  background-color: #6C757D;
+  color: #FFFFFF;
+}
+
+.nextButton {
+  background-color: #4285F4;
+  color: #FFFFFF;
+}
+
+.trackButton {
+  background-color: #4285F4;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+/* Summary cards */
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.summaryCard {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.summaryNumber {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.summaryLabel {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Background colors for summary cards */
+.bgTotalClaims {
+  background-color: #1A3E72;
+}
+
+.bgPendingReview {
+  background-color: #FFA500;
+}
+
+.bgApproved {
+  background-color: #008080;
+}
+
+.bgTotalAmount {
+  background-color: #708090;
+}

@@ -1,0 +1,4 @@
+spring.application.name=Customer_Microservice
+ 
+server.port=5001
+spring.data.mongodb.uri=mongodb://localhost:27017/CPS

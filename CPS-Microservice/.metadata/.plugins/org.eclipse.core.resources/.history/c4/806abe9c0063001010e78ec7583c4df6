@@ -1,0 +1,7 @@
+spring.application.name=RegionalHead
+
+server.port=5001
+//spring.data.mongodb.uri=mongodb://localhost:27017/CPS
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=CPS

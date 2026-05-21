@@ -1,0 +1,70 @@
+package training.iqgateway.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import training.iqgateway.model.DocumentsEO;
+import training.iqgateway.repositary.DocumentRepository;
+import training.iqgateway.service.DocumentService;
+
+@Service
+public class DocumentServiceImpl implements DocumentService {
+	
+	@Autowired
+	private DocumentRepository docRepo;
+
+	@Override
+	public List<DocumentsEO> findAll() {
+		// TODO Auto-generated method stub
+		return docRepo.findAll();
+	}
+
+	@Override
+	public Optional<DocumentsEO> findById(Integer _id) {
+		// TODO Auto-generated method stub
+		return docRepo.findById(_id);
+	}
+
+	@Override
+	public DocumentsEO save(DocumentsEO doc) {
+		// TODO Auto-generated method stub
+		return docRepo.save(doc);
+	}
+
+	@Override
+	public Optional<DocumentsEO> update(Integer id,DocumentsEO doc) {
+		// TODO Auto-generated method stub
+		 Optional<DocumentsEO> existingOpt = docRepo.findById(id);
+	        if (existingOpt.isPresent()) {
+	            DocumentsEO existing = existingOpt.get();
+
+	            existing.setClaim_id(doc.getClaim_id());
+	            existing.setBlood_test(doc.getBlood_test());
+	            existing.setAdmission_note(doc.getAdmission_note());
+	            existing.setPrescription(doc.getPrescription());
+	            existing.setXray_report(doc.getXray_report());
+	            existing.setInsurance_form(doc.getInsurance_form());
+	            existing.setDischarge_summary(doc.getDischarge_summary());
+	            existing.setOther(doc.getOther());
+	            existing.setLast_updated(doc.getLast_updated());
+	            existing.setVerified_by(doc.getVerified_by());
+	            
+	            DocumentsEO saved = docRepo.save(existing);
+
+	            return Optional.of(saved);
+	        } else {
+	            throw new RuntimeException("Document not found with id: " + id);
+	        }
+	}
+
+	@Override
+	public void DeleteById(Integer _id) {
+		// TODO Auto-generated method stub
+		docRepo.deleteById(_id);
+
+	}
+
+}

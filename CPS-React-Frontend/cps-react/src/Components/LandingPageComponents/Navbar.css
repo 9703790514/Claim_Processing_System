@@ -1,0 +1,86 @@
+/* Colors used:
+   White: #FFFFFF
+   Navy Blue: #1A3E72
+   Teal: #008080
+   Slate Gray: #708090
+   Soft Orange: #FFA500
+*/
+
+.navbar {
+  background-color: #1a3e72; /* Soft blue shade - you can keep or replace with Navy Blue #1A3E72 if preferred */
+
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  justify-content: center; /* Center content horizontally */
+  height: 75px;
+  align-items: center;
+  padding: 0 1rem; /* Replace invalid padding:auto with horizontal padding */
+  box-sizing: border-box;
+}
+
+.logo {
+  margin-left: 5%;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.logo-image {
+  width: 100px;
+  height: 40px;
+  border: 1px solid rgba(228, 228, 238, 0.5); /* Light slate gray border */
+  border-radius: 12px;
+  background-color: #ffffff; /* White background for clarity */
+  object-fit: contain;
+}
+
+.nav-buttons {
+  display: flex;
+  margin-left: 8%;
+  margin-right: 8%;
+  column-gap: 6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-buttons p {
+  width: max-content;
+  padding: 0.3rem 1rem; /* Added padding for clickable area */
+  color: #ffffff; /* White text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s linear;
+}
+
+.nav-buttons p:hover,
+.login:hover,
+.logo:hover {
+  color: #ffa500; /* Soft Orange highlight on hover */
+  transform: scale(1.2); /* Increase size by 20% */
+}
+
+.radius {
+  border: 1px solid rgba(224, 224, 234, 0.5); /* Light border with transparency */
+  border-radius: 12px;
+}
+
+.login {
+  display: flex;
+  margin-left: 8%;
+  margin-right: 5%;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s linear;
+}
+
+.login:hover {
+  color: #ffa500;
+  transform: scale(1.2);
+}

@@ -1,0 +1,78 @@
+.profile-btn-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+  width: 20px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: 0.2s ease;
+  outline: none;
+}
+
+.profile-icon-btn:hover,
+.profile-icon-btn:focus {
+  transform: scale(1.2);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: max-content;
+  background: #fff;
+  border: 1px solid #1a3e72 0.8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(70, 39, 224, 0.15);
+  padding: 1.5rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin-top: -10%;
+}
+
+.profile-dropdown p {
+  color: #1a3e72;
+}
+
+.profile-title {
+  color: #1a3e72;
+  margin-bottom: 1%;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.logout-btn {
+  background-color: #1a3e72; /* Navy Blue */
+  color: #ffffff;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(26, 62, 114, 0.3);
+}
+
+.logout-btn:hover {
+  background-color: #16375a; /* Darker Navy Blue */
+  transform: scale(1.05);
+}
+
+.logout-btn:active {
+  background-color: #0f2740; /* Even darker */
+  transform: scale(0.98);
+}
+
+.logout-btn:focus {
+  outline: 3px solid #ffa500; /* Soft Orange focus ring */
+  outline-offset: 2px;
+}

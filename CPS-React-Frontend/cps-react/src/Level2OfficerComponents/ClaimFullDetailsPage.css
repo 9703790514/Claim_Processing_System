@@ -1,0 +1,140 @@
+.claim-details-card {
+    background: #f9fafc;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(30, 60, 90, 0.08), 0 1.5px 4px rgba(30, 60, 90, 0.06);
+    max-width: 600px;
+    margin: 32px auto;
+    padding: 32px 28px;
+    position: relative;
+    transition: box-shadow 0.3s;
+}
+
+.claim-details-card:hover {
+    box-shadow: 0 8px 32px rgba(30, 60, 90, 0.16), 0 3px 8px rgba(30, 60, 90, 0.10);
+}
+
+.claim-details-title {
+    color: #1A3E72;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.claim-details-field {
+    margin-bottom: 18px;
+}
+
+.claim-details-label {
+    font-weight: 600;
+    color: #5b6b7a;
+    margin-right: 8px;
+}
+
+.claim-details-value {
+    color: #1A3E72;
+    font-size: 1.08rem;
+    word-break: break-word;
+}
+
+.claim-details-status {
+    display: inline-block;
+    padding: 2px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    background: #e3e9f7;
+    color: #3452a3;
+    margin-left: 6px;
+}
+
+.claim-details-docs {
+    color: #0a4d2b;
+    font-weight: 500;
+    background: #e8f5e9;
+    border-radius: 8px;
+    padding: 2px 8px;
+}
+
+.claim-details-back-btn {
+    margin-top: 28px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: #1A3E72;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.claim-details-back-btn:hover {
+    background: #142a5a;
+}
+
+/* Assign Field Doctor Button */
+.claim-details-assign-btn {
+    background: #ff9800;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: background 0.2s;
+}
+.claim-details-assign-btn:hover {
+    background: #f57c00;
+    color: #fff;
+}
+
+/* Status Bar Styles */
+.claim-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0 32px 0;
+    gap: 0;
+}
+
+.claim-status-step {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    color: #b0b8c1;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.claim-status-step.active {
+    color: #1A3E72;
+}
+
+.claim-status-step.completed {
+    color: #2e7d32;
+}
+
+.claim-status-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #e3e9f7;
+    margin: 0 auto 6px auto;
+    border: 3px solid #b0b8c1;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.claim-status-step.active .claim-status-dot {
+    border-color: #1A3E72;
+    background: #1A3E72;
+}
+
+.claim-status-step.completed .claim-status-dot {
+    border-color: #2e7d32;
+    background: #2e7d32;
+}
+
+.claim-status-bar-line {
+    flex: 1;
+    height: 4px;
+    background: #e3e9f7;
+    margin: 0 -6px;
+    border-radius: 2px;
+    transition: background 0.3s;
+}

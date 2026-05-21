@@ -1,0 +1,10 @@
+package traning.iqgateway.service;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient(name = "documents-service")  // Eureka registered service ID
+public interface DocumentClient {
+    @GetMapping("/documents/claim/{claimId}")
+    DocumentsEO getDocumentByClaimId(@PathVariable("claimId") Integer claimId);
+}

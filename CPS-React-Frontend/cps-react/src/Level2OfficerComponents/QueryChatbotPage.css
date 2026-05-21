@@ -1,0 +1,116 @@
+/* src/Level1OfficerComponents/QueryChatbotPage.css */
+.query-chatbot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 64px); /* Adjust based on your header/navbar height */
+    background-color: #e0f2f7; /* Lighter background for query pages */
+    padding: 20px;
+}
+
+.query-chatbot-paper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px; /* Slightly wider for chat */
+    height: 80vh; /* Taller for more chat history */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.query-chatbot-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    background-color: #007bff; /* Primary blue header */
+    color: white;
+    border-bottom: 1px solid #0056b3;
+}
+
+.query-chatbot-header .MuiIconButton-root {
+    color: white;
+}
+
+.query-chatbot-messages {
+    flex-grow: 1;
+    overflow-y: auto; /* Enable scrolling for messages */
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex; /* Use flex to push content up for scroll */
+    flex-direction: column;
+    justify-content: flex-end; /* Keep messages at the bottom */
+}
+
+.query-chatbot-messages .MuiList-root {
+    padding: 0;
+    width: 100%; /* Ensure list takes full width */
+}
+
+.message-item {
+    display: flex;
+    align-items: flex-start; /* Align avatar and text at the top */
+    margin-bottom: 15px;
+    max-width: 95%; /* Give some margin */
+}
+
+/* Styles for Officer (User) messages */
+.message-item.officer {
+    justify-content: flex-end; /* Align to the right */
+    margin-left: auto; /* Push to the right */
+}
+
+.message-item.officer .MuiAvatar-root {
+    order: 2; /* Move avatar to the right */
+    margin-right: 0;
+    margin-left: 8px;
+    background-color: #28a745; /* Green for officer */
+}
+
+.message-item.officer .MuiListItemText-root {
+    background-color: #d4edda; /* Light green bubble */
+    text-align: right;
+    border-radius: 15px 15px 0 15px; /* Rounded corners, flat bottom-right */
+}
+
+/* Styles for Customer (System or assumed Customer) messages */
+.message-item.customer {
+    justify-content: flex-start; /* Align to the left */
+    margin-right: auto; /* Push to the left */
+}
+
+.message-item.customer .MuiAvatar-root {
+    order: 1; /* Keep avatar to the left */
+    background-color: #6c757d; /* Grey for customer/system */
+}
+
+.message-item.customer .MuiListItemText-root {
+    background-color: #e2e3e5; /* Light grey bubble */
+    text-align: left;
+    border-radius: 15px 15px 15px 0; /* Rounded corners, flat bottom-left */
+}
+
+
+.message-item .MuiListItemText-root {
+    padding: 10px 15px;
+    max-width: 80%;
+    word-break: break-word;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08); /* Subtle shadow for bubbles */
+}
+
+.message-item .MuiListItemText-primary {
+    font-weight: 500;
+    color: #333;
+}
+
+.message-item .MuiListItemText-secondary {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.query-chatbot-input {
+    padding: 16px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}

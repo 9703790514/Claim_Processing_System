@@ -1,0 +1,69 @@
+.navbar {
+  background-color: #1a3e72; /* Navy Blue for trust and professionalism */
+  display: flex;
+  align-items: center;
+  height: 75px;
+  justify-content: start;
+  transition: background-color 0.3s ease;
+}
+ 
+.logo {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+ 
+.logo-image {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #708090; /* Slate Gray border for modern look */
+  border-radius: 12px;
+  object-fit: contain;
+  background-color: #ffffff; /* White background for clarity */
+}
+ 
+.nav-buttons {
+  display: flex;
+  margin-left: 8%;
+  margin-right: 8%;
+  column-gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.nav-buttons p {
+  padding: 0.3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff; /* White text for clarity */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s linear;
+}
+ 
+.nav-buttons p:hover,
+.login:hover,
+.logo:hover {
+  color: #ffa500; /* Soft Orange highlight on hover for energy */
+  transform: scale(1.2);
+}
+ 
+.radius {
+  border: 1px solid #e6e6e9; /* Light gray border for subtle separation */
+  border-radius: 12px;
+}
+ 
+.login {
+  margin-left: auto;
+  margin-right: 5%;
+  cursor: pointer;
+  color: #ffffff; /* White text */
+  font-weight: 600;
+  transition: transform 0.2s linear, color 0.3s ease;
+}
+ 
+.login:hover {
+  color: #ffa500; /* Soft Orange highlight */
+  transform: scale(1.2);
+}
+ 
+ 

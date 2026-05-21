@@ -1,0 +1,11 @@
+package traning.iqgateway.service;
+
+import org.springframework.http.ResponseEntity;
+
+import traning.iqgateway.entities.ClaimsEO;
+
+public interface ClaimsService {
+
+    ResponseEntity<ClaimsEO> updateClaimStatus
+
+}

@@ -1,0 +1,342 @@
+/* src/components/FieldDoctors.css - Super Enhanced Styling */
+
+/* General Container & Page Background */
+body {
+    background-color: #f8f9fa; /* A softer, almost off-white background */
+    font-family: 'Inter', sans-serif; /* Keep Inter for modern look */
+    line-height: 1.6; /* Improve readability */
+    color: #343a40; /* Default text color for better contrast */
+}
+
+/* --- Table Container - Main Card --- */
+.MuiTableContainer-root {
+    border-radius: 12px; /* Slightly less rounded, feels more sophisticated */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07); /* More diffused, elegant shadow */
+    background: #ffffff; /* Pure white background for the table card */
+    overflow: hidden; /* Ensures rounded corners clip content */
+    border: 1px solid #e9ecef; /* Very subtle border for definition */
+    margin-bottom: 30px; /* Space below the table */
+    transition: all 0.3s ease-in-out; /* Smooth transition for potential hover/focus */
+}
+
+/* --- Table Header --- */
+.MuiTableHead-root {
+    background: linear-gradient(to right, #edf2f7, #e0e6ed); /* Calmer, cooler gradient for header */
+}
+
+.MuiTableHead-root th {
+    font-weight: 700; /* Bolder header text */
+    font-size: 0.95rem; /* Slightly reduced for better flow, but still prominent */
+    color: #495057; /* A sophisticated dark grey for header text */
+    padding: 18px 20px; /* More padding for spacious headers, especially vertical */
+    text-transform: uppercase; /* Uppercase for header labels */
+    letter-spacing: 0.06em; /* A bit more letter spacing */
+    border-bottom: 2px solid #ced4da; /* A solid, slightly darker bottom border for header */
+    user-select: none; /* Prevent text selection on header */
+}
+
+/* Table Sort Label specific styles */
+.MuiTableSortLabel-root {
+    color: inherit; /* Ensure label inherits color from th */
+    &:hover {
+        color: #1a3e72; /* Hover color for sortable headers */
+    }
+}
+.MuiTableSortLabel-icon {
+    font-size: 1.2rem; /* Make sort icon a bit larger */
+    margin-left: 4px; /* More space between text and icon */
+    color: rgba(73, 80, 87, 0.5); /* Lighter color for inactive sort icon */
+}
+.MuiTableSortLabel-root.Mui-active .MuiTableSortLabel-icon {
+    color: #1a3e72; /* Active sort icon color */
+}
+
+
+/* --- Table Row --- */
+.MuiTableRow-root {
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover */
+    border-bottom: 1px solid #f2f4f6; /* Lighter, more subtle border between rows */
+}
+
+/* Table Row Hover */
+.MuiTableRow-root:hover {
+    background-color: #f6f8fa; /* A very subtle light grey-blue on hover */
+    transform: translateY(-2px); /* Slightly more pronounced lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07); /* Clearer, softer shadow on hover */
+}
+
+/* Zebra Striping for better readability */
+.MuiTableBody-root .MuiTableRow-root:nth-of-type(odd) {
+    background-color: #fdfdfe; /* Almost white for odd rows, barely perceptible difference */
+}
+
+/* --- Table Cell --- */
+.MuiTableCell-root {
+    font-size: 0.9rem; /* Consistent font size */
+    padding: 15px 20px; /* Generous padding for cells, matching header horizontal */
+    color: #495057; /* Standard text color, matching header */
+    vertical-align: middle; /* Vertically align content */
+    border-bottom: none; /* Remove default cell borders if row border is enough */
+}
+
+/* Last Cell (Actions) */
+.MuiTableCell-root:last-child {
+    min-width: 150px; /* Slightly wider for action buttons to prevent wrapping */
+    text-align: right; /* Align actions to the right */
+}
+
+/* --- Chips for Availability --- */
+.MuiChip-root {
+    font-weight: 600;
+    font-size: 0.78em; /* Slightly smaller for chips for elegance */
+    letter-spacing: 0.02em; /* Less letter spacing for compactness */
+    border-radius: 18px; /* Slightly less rounded, more pill-like */
+    padding: 2px 10px; /* Adjusted padding */
+    height: 28px; /* Fixed height for consistency */
+    min-width: 90px; /* Ensure consistent minimum width */
+    justify-content: center; /* Center text within chip */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Finer shadow for chips */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Specific Chip Colors for Availability - More subdued & consistent palette */
+.MuiChip-root[label="Assigned to This Claim"] {
+    background-color: #e0f7fa; /* Light cyan */
+    color: #00838f; /* Darker cyan text */
+    border: 1px solid #b2ebf2;
+}
+
+.MuiChip-root[label="Available for Assignment"] {
+    background-color: #e8f5e9; /* Light green */
+    color: #388e3c; /* Darker green text */
+    border: 1px solid #a5d6a7;
+}
+
+/* Note: You might need to adjust your component to output "Available" or "On Duty" or "Unavailable" for these to apply */
+.MuiChip-root[label="Available"] {
+    background-color: #e8f5e9; /* Light green */
+    color: #388e3c; /* Darker green text */
+    border: 1px solid #a5d6a7;
+}
+
+.MuiChip-root[label="On Duty"] {
+    background-color: #fffde7; /* Light yellow */
+    color: #fbc02d; /* Darker yellow text */
+    border: 1px solid #ffe082;
+}
+
+.MuiChip-root[label="Unavailable"] {
+    background-color: #ffebee; /* Light red */
+    color: #d32f2f; /* Darker red text */
+    border: 1px solid #ef9a9a;
+}
+
+/* --- Typography - Page Title --- */
+.MuiTypography-h4 {
+    font-weight: 800; /* Extra bold */
+    letter-spacing: 0.03em; /* Slightly less spacing for a tighter look */
+    color: #1a3e72; /* Deep blue from your theme */
+    text-align: center;
+    margin-bottom: 45px; /* More space below title for visual break */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Finer text shadow */
+    position: relative; /* For potential pseudo-element line */
+}
+/* Optional: Add a subtle line under the title */
+.MuiTypography-h4::after {
+    content: '';
+    display: block;
+    width: 60px; /* Length of the line */
+    height: 3px; /* Thickness of the line */
+    background: linear-gradient(to right, #1a3e72, #4facfe); /* Gradient line */
+    margin: 10px auto 0; /* Center it and add space below title */
+    border-radius: 2px;
+}
+
+
+/* --- Typography - Subheadings (e.g., in loading/error states) --- */
+.MuiTypography-h6 {
+    color: #5f6c77; /* Softer, slightly darker grey */
+    font-weight: 500;
+}
+
+/* --- Buttons - General Styling --- */
+.MuiButton-root {
+    border-radius: 6px !important; /* Slightly less rounded for a crisp look */
+    text-transform: none !important; /* Keep text as is */
+    font-weight: 600 !important;
+    padding: 10px 22px !important; /* More padding for a comfortable click area */
+    transition: all 0.3s ease-in-out !important;
+    letter-spacing: 0.02em;
+}
+
+/* Primary Contained Button */
+.MuiButton-containedPrimary {
+    background: linear-gradient(to right, #1a3e72, #2a5298) !important; /* Blue gradient */
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(26, 62, 114, 0.3) !important; /* Softer, wider shadow */
+}
+
+.MuiButton-containedPrimary:hover {
+    background: linear-gradient(to right, #122c5e, #203a70) !important; /* Darker gradient on hover */
+    box-shadow: 0 6px 16px rgba(26, 62, 114, 0.4) !important; /* Stronger, diffused shadow on hover */
+    transform: translateY(-2px); /* Slightly more lift */
+}
+
+/* Outlined Button */
+.MuiButton-outlined {
+    border-color: #a7bedc !important; /* Lighter border color */
+    color: #1a3e72 !important;
+    background-color: transparent !important;
+}
+
+.MuiButton-outlined:hover {
+    background-color: #eaf3ff !important; /* Lighter blue background on hover */
+    color: #1a3e72 !important;
+    box-shadow: 0 2px 10px rgba(26, 62, 114, 0.15); /* More subtle shadow */
+}
+
+/* Button with disabled state (e.g., Assign button when already assigned) */
+.MuiButton-root.Mui-disabled {
+    background-color: #ced4da !important; /* Neutral grey for disabled buttons */
+    color: #868e96 !important; /* Soft grey text */
+    box-shadow: none !important;
+    transform: none !important;
+    cursor: not-allowed !important;
+}
+
+/* --- Search Field (if applicable, though not in this component yet) --- */
+.MuiTextField-root .MuiOutlinedInput-root {
+    border-radius: 10px; /* Slightly less rounded */
+    background-color: #ffffff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #a7bedc; /* Subtle hover border */
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #1a3e72 !important; /* Stronger focus border */
+    box-shadow: 0 0 0 4px rgba(26, 62, 114, 0.15); /* Soft, wider focus ring */
+}
+
+/* --- Alerts and Snackbar --- */
+.MuiAlert-root {
+    border-radius: 8px;
+    font-size: 0.95rem;
+    padding: 12px 18px;
+    align-items: center; /* Center icon and text vertically */
+}
+.MuiAlert-icon {
+    font-size: 1.5rem; /* Larger icon */
+    margin-right: 12px;
+}
+.MuiAlert-message {
+    font-weight: 500;
+}
+.MuiAlert-filledSuccess { background-color: #4CAF50; color: #fff; }
+.MuiAlert-filledError { background-color: #ef5350; color: #fff; }
+.MuiAlert-filledInfo { background-color: #2196F3; color: #fff; }
+.MuiAlert-filledWarning { background-color: #ff9800; color: #fff; }
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+    .MuiTableHead-root th,
+    .MuiTableCell-root {
+        padding: 14px 15px;
+        font-size: 0.88rem;
+    }
+    .MuiTableHead-root th {
+        font-size: 0.92rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .MuiTypography-h4 {
+        font-size: 2.1rem !important; /* Keep large for impact */
+        margin-bottom: 35px;
+    }
+    .MuiTypography-h4::after {
+        width: 50px;
+        height: 2px;
+        margin: 8px auto 0;
+    }
+    .MuiTableHead-root th,
+    .MuiTableCell-root {
+        font-size: 0.82rem;
+        padding: 12px 10px;
+    }
+    .MuiChip-root {
+        font-size: 0.72em;
+        min-width: 70px;
+        height: 26px;
+    }
+    .MuiButton-root {
+        padding: 8px 16px !important;
+        font-size: 0.82rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .MuiTypography-h4 {
+        font-size: 1.8rem !important;
+        margin-bottom: 25px;
+    }
+    .MuiTypography-h4::after {
+        width: 40px;
+        height: 2px;
+        margin: 6px auto 0;
+    }
+    .MuiTableContainer-root {
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    .MuiTableHead-root th,
+    .MuiTableCell-root {
+        font-size: 0.78rem;
+        padding: 10px 8px;
+    }
+    .MuiTableCell-root:last-child {
+        min-width: 120px;
+        text-align: center; /* Center actions on small screens */
+    }
+    .MuiButton-root {
+        width: auto; /* Revert to auto, let flexbox handle it for better flow */
+        margin-top: 8px !important;
+        min-width: unset; /* Allow buttons to shrink */
+        padding: 8px 12px !important;
+        font-size: 0.78rem !important;
+    }
+    .MuiButton-root + .MuiButton-root {
+        margin-left: 8px !important; /* Add some space between stacked buttons */
+    }
+    /* Ensure action buttons are visually grouped on small screens */
+    .MuiTableCell-root:last-child > .MuiButton-root {
+        margin-top: 0 !important; /* Remove top margin if in last cell */
+        display: inline-block; /* Allow side-by-side if space permits */
+    }
+}
+
+/* Very Small Screens (e.g., iPhone SE) */
+@media (max-width: 400px) {
+    .MuiTypography-h4 {
+        font-size: 1.5rem !important;
+        margin-bottom: 20px;
+    }
+    .MuiTableHead-root th,
+    .MuiTableCell-root {
+        font-size: 0.75rem;
+        padding: 8px 5px;
+    }
+    .MuiChip-root {
+        font-size: 0.68em;
+        min-width: 60px;
+        height: 24px;
+    }
+    .MuiButton-root {
+        padding: 6px 10px !important;
+        font-size: 0.7rem !important;
+    }
+}

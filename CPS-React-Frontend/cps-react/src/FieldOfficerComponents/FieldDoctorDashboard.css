@@ -1,0 +1,204 @@
+/* General Page Layout and Responsiveness */
+.fd-dashboard-container {
+    padding-top: 32px; /* Adjust based on header height */
+    padding-bottom: 32px;
+    background-color: var(--background-light); /* Light background for the page */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height)); /* Adjust for header/footer if present */
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 900px) { /* Medium devices and down */
+    .fd-dashboard-container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Loading State */
+.fd-dashboard-loading,
+.fd-dashboard-error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Occupy most of the viewport height */
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.fd-dashboard-loading .MuiCircularProgress-root {
+    color: var(--primary-main); /* Match primary theme color */
+    margin-bottom: 16px;
+}
+
+.fd-dashboard-error .MuiTypography-root {
+    margin-bottom: 24px;
+}
+
+/* Dashboard Header */
+.fd-dashboard-title {
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.fd-dashboard-divider {
+    margin-bottom: 32px;
+    background-color: var(--primary-light);
+    height: 2px;
+}
+
+/* Stats Cards Section */
+.fd-stats-cards-section {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.fd-stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    min-height: 150px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+.fd-stat-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+.fd-stat-label {
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+
+.fd-stat-value {
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-top: auto; /* Pushes value to the bottom if content above varies */
+}
+
+/* Specific card colors */
+.fd-stat-pending {
+    background: linear-gradient(135deg, var(--warning-light), var(--warning-main));
+    color: var(--text-on-dark); /* White text for better contrast */
+}
+.fd-stat-pending .fd-stat-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.fd-stat-approved-fd {
+    background: linear-gradient(135deg, var(--success-light), var(--success-main));
+    color: var(--text-on-dark);
+}
+.fd-stat-approved-fd .fd-stat-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.fd-stat-rejected {
+    background: linear-gradient(135deg, var(--error-light), var(--error-main));
+    color: var(--text-on-dark);
+}
+.fd-stat-rejected .fd-stat-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.fd-stat-total {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-main));
+    color: var(--text-on-dark);
+}
+.fd-stat-total .fd-stat-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Adjust font sizes for smaller screens */
+@media (max-width: 600px) { /* Small devices (phones) */
+    .fd-stat-card {
+        padding: 16px;
+        min-height: 120px;
+    }
+    .fd-stat-label {
+        font-size: 1rem;
+    }
+    .fd-stat-value {
+        font-size: 2.5rem;
+    }
+}
+
+/* Claims Table Section */
+.fd-claims-table-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--background-paper);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.fd-table-title {
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Specific styling for the Back to Overview Cards button */
+.fd-claims-table-section .MuiButton-outlined {
+    border-color: var(--primary-main);
+    color: var(--primary-main);
+    margin-bottom: 20px;
+    align-self: flex-start; /* Align to the left within the flex container */
+}
+
+.fd-claims-table-section .MuiButton-outlined:hover {
+    background-color: rgba(var(--primary-main-rgb), 0.08); /* Slight hover effect */
+}
+
+/* No Claims Found message */
+.fd-claims-table-section .MuiTypography-body1[color="text.secondary"] {
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Optional: Define CSS variables for easier theme management if not using MUI theme directly for all colors */
+:root {
+    --primary-main: #1976d2; /* Example: Blue */
+    --primary-light: #42a5f5;
+    --primary-dark: #1565c0;
+    --primary-main-rgb: 25, 118, 210; /* RGB for primary-main */
+
+    --secondary-main: #9c27b0; /* Example: Purple */
+    --secondary-light: #ba68c8;
+
+    --warning-main: #ff9800; /* Example: Orange */
+    --warning-light: #ffb74d;
+
+    --success-main: #4caf50; /* Example: Green */
+    --success-light: #81c784;
+
+    --error-main: #d32f2f; /* Example: Red */
+    --error-light: #ef5350;
+
+    --background-light: #f4f6f8; /* Light grey background */
+    --background-paper: #ffffff; /* White for cards/containers */
+
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --text-on-dark: #ffffff; /* Text color for dark backgrounds */
+}
+
+/* Ensure the root element uses the theme colors or variables */
+body {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    color: var(--text-primary);
+}

@@ -1,0 +1,288 @@
+/* src/Level1OfficerComponents/ClaimStatsPage.css */
+
+/* --- General Container Styling --- */
+.claim-stats-container {
+    /* More refined, slightly warmer gradient for a welcoming feel */
+    background: linear-gradient(135deg, #fefefe, #f0f4f8); /* Off-white to light blue-grey */
+    border: none !important;
+    border-radius: 18px !important; /* Even more rounded corners */
+    /* Enhanced multi-layered shadow for subtle depth */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 15px 40px rgba(0, 0, 0, 0.04) !important;
+    padding: 50px !important; /* Increased padding for spaciousness */
+    margin: 40px auto !important; /* More margin top/bottom */
+    max-width: 1280px; /* Slightly wider max-width for larger screens */
+    min-height: calc(100vh - 240px); /* Adjusted height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; /* For potential future absolute positioning of elements */
+    overflow: hidden; /* Ensures shadows/borders don't spill */
+}
+
+/* --- Page Title --- */
+.claim-stats-title {
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    font-weight: 700 !important;
+    color: #1a2b4b !important; /* Deeper, rich navy-like color for gravitas */
+    margin-bottom: 30px !important; /* More space below title */
+    letter-spacing: 1px; /* Slightly more prominent letter spacing */
+    font-size: 2.8rem !important; /* Larger, more impactful title */
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure title is above any subtle background elements */
+}
+
+/* --- Divider Styling --- */
+.claim-stats-divider {
+    background-color: #e0e6ed !important; /* Slightly more pronounced but still elegant divider */
+    height: 1px !important;
+    margin: 35px 0 !important; /* Increased vertical spacing */
+    width: 100%;
+    max-width: 80%; /* Shorter divider for a more refined look */
+}
+
+/* --- Stat Cards Container (if any, assuming MUI Grid is used) --- */
+.stat-cards-grid-container {
+    width: 100%;
+    margin-top: 25px; /* Adjust spacing */
+    margin-bottom: 50px; /* More space before other elements */
+}
+
+
+/* --- Individual Stat Cards --- */
+.stat-card-paper {
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.4s ease-in-out; /* Slower, more fluid transition */
+    border-radius: 16px !important; /* More rounded */
+    padding: 35px !important; /* Increased padding inside cards */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100%;
+    min-height: 150px; /* Slightly increased min-height */
+    /* Softer initial shadow with a subtle inner glow */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.03) inset !important;
+    background-color: #ffffff !important;
+    border: none; /* Remove border in favor of inner shadow/subtle background */
+    overflow: hidden; /* Hide overflowing content/shadows */
+}
+
+.stat-card-paper:hover {
+    transform: translateY(-10px); /* More pronounced lift effect on hover */
+    /* More prominent, diffused shadow on hover for a floating effect */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 25px 60px rgba(0, 0, 0, 0.08) !important;
+    border: none; /* Ensure no border on hover */
+}
+
+.stat-card-label {
+    font-weight: 600 !important; /* Slightly bolder label */
+    color: #5a5a5a !important; /* Medium dark grey for labels */
+    font-size: 1.05rem !important; /* Slightly larger label font */
+    letter-spacing: 0.3px;
+    margin-bottom: 10px; /* Space between label and value */
+}
+
+.stat-card-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800 !important; /* Extra bold values for strong emphasis */
+    font-size: 3.2rem !important; /* Significantly larger, more dominant value font */
+    margin-top: 0px !important; /* Adjusted margin to fit larger font */
+    line-height: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Subtle text shadow for depth */
+}
+
+/* Specific background colors for clarity and aesthetics (more sophisticated pastels) */
+.stat-card-total {
+    background-color: #e3f2fd !important; /* Gentle Blue */
+    /* Subtle inner shadow or gradient to give more depth */
+    box-shadow: inset 0 0 10px rgba(0, 100, 200, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+.stat-card-raised {
+    background-color: #fff8e1 !important; /* Soft Creamy Yellow */
+    box-shadow: inset 0 0 10px rgba(255, 165, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+.stat-card-pending {
+    background-color: #ffe0b2 !important; /* Muted Peach/Orange */
+    box-shadow: inset 0 0 10px rgba(255, 140, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+.stat-card-approved {
+    background-color: #e8f5e9 !important; /* Calming Light Green */
+    box-shadow: inset 0 0 10px rgba(0, 128, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+.stat-card-rejected {
+    background-color: #ffcdd2 !important; /* Soft Muted Red */
+    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+.stat-card-settled {
+    background-color: #bbdefb !important; /* A slightly richer light blue for settled */
+    box-shadow: inset 0 0 10px rgba(0, 100, 200, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Color overrides for stat values to match themes (more vibrant, complementary) */
+.stat-card-value.primary-color {
+    color: #2196f3 !important; /* Brighter blue for total */
+}
+
+.stat-card-value.secondary-text-color {
+    color: #a1887f !important; /* Warm brown for raised */
+}
+
+.stat-card-value.warning-color {
+    color: #ff8f00 !important; /* More intense orange for pending */
+}
+
+.stat-card-value.success-color {
+    color: #43a047 !important; /* Deeper green for approved */
+}
+
+.stat-card-value.error-color {
+    color: #e53935 !important; /* Stronger red for rejected */
+}
+
+.stat-card-value.info-color {
+    color: #03a9f4 !important; /* Sky blue for info/settled */
+}
+
+/* Data Updated Text */
+.data-updated-text {
+    margin-top: 40px !important;
+    font-size: 0.95rem !important; /* Slightly larger */
+    color: #9e9e9e !important; /* Softer, muted grey */
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}
+
+/* Back to Dashboard Button */
+.back-button-box {
+    margin-top: 60px !important; /* More space before button */
+    text-align: center;
+    width: 100%;
+}
+
+.back-button {
+    background-color: #3f51b5 !important; /* Material deep indigo */
+    color: white !important;
+    padding: 16px 40px !important; /* Even larger padding */
+    font-weight: 600 !important;
+    border-radius: 12px !important; /* More rounded */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    letter-spacing: 0.8px; /* More noticeable letter spacing */
+    text-transform: uppercase;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More prominent initial button shadow */
+}
+
+.back-button:hover {
+    background-color: #303f9f !important; /* Darker indigo on hover */
+    transform: translateY(-3px); /* More pronounced lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 992px) { /* Medium screens (laptops/larger tablets) */
+    .claim-stats-container {
+        padding: 40px !important;
+        margin: 30px auto !important;
+    }
+    .claim-stats-title {
+        font-size: 2.2rem !important;
+        margin-bottom: 25px !important;
+    }
+    .stat-card-paper {
+        padding: 30px !important;
+        min-height: 130px;
+    }
+    .stat-card-value {
+        font-size: 2.5rem !important;
+    }
+    .back-button-box {
+        margin-top: 50px !important;
+    }
+    .back-button {
+        padding: 14px 35px !important;
+    }
+}
+
+@media (max-width: 768px) { /* Smaller tablets */
+    .claim-stats-container {
+        padding: 30px !important;
+        margin: 25px auto !important;
+        min-height: calc(100vh - 180px);
+    }
+    .claim-stats-title {
+        font-size: 2rem !important;
+        letter-spacing: 0.5px;
+    }
+    .claim-stats-divider {
+        margin: 30px 0 !important;
+        max-width: 90%;
+    }
+    .stat-card-paper {
+        padding: 25px !important;
+        min-height: 120px;
+    }
+    .stat-card-label {
+        font-size: 0.95rem !important;
+    }
+    .stat-card-value {
+        font-size: 2.2rem !important;
+    }
+    .data-updated-text {
+        margin-top: 30px !important;
+        font-size: 0.85rem !important;
+    }
+    .back-button-box {
+        margin-top: 40px !important;
+    }
+    .back-button {
+        padding: 12px 30px !important;
+    }
+}
+
+@media (max-width: 576px) { /* Mobile */
+    .claim-stats-container {
+        padding: 25px !important;
+        margin: 20px auto !important;
+        min-height: calc(100vh - 160px);
+        border-radius: 12px !important;
+    }
+    .claim-stats-title {
+        font-size: 1.6rem !important;
+        margin-bottom: 20px !important;
+        letter-spacing: 0.3px;
+    }
+    .claim-stats-divider {
+        margin: 20px 0 !important;
+        max-width: 95%;
+    }
+    .stat-card-paper {
+        padding: 20px !important;
+        min-height: 100px;
+        border-radius: 10px !important;
+    }
+    .stat-card-label {
+        font-size: 0.85rem !important;
+        margin-bottom: 5px;
+    }
+    .stat-card-value {
+        font-size: 1.8rem !important;
+    }
+    .data-updated-text {
+        margin-top: 25px !important;
+        font-size: 0.75rem !important;
+    }
+    .back-button-box {
+        margin-top: 30px !important;
+    }
+    .back-button {
+        padding: 10px 25px !important;
+        font-size: 0.85rem;
+        border-radius: 8px !important;
+    }
+}

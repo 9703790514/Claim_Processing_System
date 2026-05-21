@@ -1,0 +1,5 @@
+package training.iqgateway.config;
+
+public class Mongo {
+
+}

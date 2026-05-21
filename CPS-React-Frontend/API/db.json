@@ -1,0 +1,1575 @@
+{
+  "preAuthorization": [
+    {
+      "cardNumber": "HC001234",
+      "policyNumber": "POL-2024-001",
+      "patientName": "Sunil",
+      "policyType": "Premium Health",
+      "validUntil": "2025-12-31",
+      "coverageAmount": "₹5,00,000",
+      "status": "Active",
+      "id": "59d8"
+    },
+    {
+      "cardNumber": "HC005678",
+      "policyNumber": "POL-2024-002",
+      "patientName": "Priya",
+      "policyType": "Basic Health",
+      "validUntil": "2025-06-30",
+      "coverageAmount": "₹2,00,000",
+      "status": "Active",
+      "id": "d83e"
+    }
+  ],
+  "medicalInformation": [
+    {
+      "patientId": "P001",
+      "name": "Sunil",
+      "age": 23,
+      "gender": "Male",
+      "bloodType": "A+",
+      "allergies": [
+        "Penicillin",
+        "Shellfish",
+        "Nuts"
+      ],
+      "medications": [
+        "Metformin 500mg - Twice daily",
+        "Lisinopril 10mg - Once daily",
+        "Aspirin 81mg - Once daily"
+      ],
+      "conditions": [
+        "Type 2 Diabetes",
+        "Hypertension",
+        "High Cholesterol"
+      ],
+      "lastVisit": "2024-06-15",
+      "doctor": "Dr. Sarah Smith",
+      "vitals": {
+        "bp": "130/80 mmHg",
+        "pulse": "72 bpm",
+        "temperature": "98.6°F",
+        "weight": "75 kg",
+        "height": "175 cm",
+        "bmi": "24.5"
+      },
+      "labResults": {
+        "bloodSugar": "126 mg/dL",
+        "cholesterol": "195 mg/dL",
+        "hemoglobin": "14.2 g/dL"
+      },
+      "id": "ca22"
+    },
+    {
+      "patientId": "P002",
+      "name": "Priya",
+      "age": 29,
+      "gender": "Female",
+      "bloodType": "O-",
+      "allergies": [
+        "None Known"
+      ],
+      "medications": [
+        "Vitamin D3 1000IU - Daily",
+        "Iron Supplement - Daily"
+      ],
+      "conditions": [
+        "Mild Asthma",
+        "Iron Deficiency Anemia"
+      ],
+      "lastVisit": "2024-06-20",
+      "doctor": "Dr. Michael Johnson",
+      "vitals": {
+        "bp": "120/70 mmHg",
+        "pulse": "68 bpm",
+        "temperature": "98.4°F",
+        "weight": "65 kg",
+        "height": "165 cm",
+        "bmi": "23.9"
+      },
+      "labResults": {
+        "hemoglobin": "10.8 g/dL",
+        "ironLevel": "45 μg/dL",
+        "vitaminD": "25 ng/mL"
+      },
+      "id": "0360"
+    },
+    {
+      "patientId": "P003",
+      "name": "Arijt",
+      "age": 18,
+      "gender": "Male",
+      "bloodType": "B+",
+      "allergies": [
+        "Sulfa drugs",
+        "Latex"
+      ],
+      "medications": [
+        "Atorvastatin 40mg - Evening",
+        "Metoprolol 50mg - Twice daily"
+      ],
+      "conditions": [
+        "Coronary Artery Disease",
+        "Hyperlipidemia"
+      ],
+      "lastVisit": "2024-06-10",
+      "doctor": "Dr. Emily Davis",
+      "vitals": {
+        "bp": "140/85 mmHg",
+        "pulse": "78 bpm",
+        "temperature": "98.2°F",
+        "weight": "82 kg",
+        "height": "178 cm",
+        "bmi": "25.9"
+      },
+      "labResults": {
+        "cholesterol": "210 mg/dL",
+        "ldl": "135 mg/dL",
+        "hdl": "42 mg/dL",
+        "triglycerides": "165 mg/dL"
+      },
+      "id": "f141"
+    },
+    {
+      "patientId": "P004",
+      "name": "Arijt",
+      "age": 18,
+      "gender": "Male",
+      "bloodType": "B+",
+      "allergies": [
+        "Sulfa drugs",
+        "Latex"
+      ],
+      "medications": [
+        "Atorvastatin 40mg - Evening",
+        "Metoprolol 50mg - Twice daily"
+      ],
+      "conditions": [
+        "Coronary Artery Disease",
+        "Hyperlipidemia"
+      ],
+      "lastVisit": "2024-06-10",
+      "doctor": "Dr. Emily Davis",
+      "vitals": {
+        "bp": "140/85 mmHg",
+        "pulse": "78 bpm",
+        "temperature": "98.2°F",
+        "weight": "82 kg",
+        "height": "178 cm",
+        "bmi": "25.9"
+      },
+      "labResults": {
+        "cholesterol": "210 mg/dL",
+        "ldl": "135 mg/dL",
+        "hdl": "42 mg/dL",
+        "triglycerides": "165 mg/dL"
+      },
+      "id": "62c3"
+    }
+  ],
+  "claimTracking": [
+    {
+      "id": "CLM-001",
+      "customerName": "Sunil",
+      "policyNumber": "POL-12345",
+      "claimType": "Vehicle Accident",
+      "status": "Under Review",
+      "amount": 15000,
+      "dateSubmitted": "2024-06-15",
+      "lastUpdated": "2024-06-20"
+    },
+    {
+      "id": "CLM-002",
+      "customerName": "Priya",
+      "policyNumber": "POL-67890",
+      "claimType": "Property Damage",
+      "status": "Approved",
+      "amount": 8500,
+      "dateSubmitted": "2024-06-10",
+      "lastUpdated": "2024-06-18"
+    },
+    {
+      "id": "CLM-003",
+      "customerName": "Arjit",
+      "policyNumber": "POL-11111",
+      "claimType": "Medical",
+      "status": "Pending Documentation",
+      "amount": 25000,
+      "dateSubmitted": "2024-06-12",
+      "lastUpdated": "2024-06-19"
+    },
+    {
+      "id": "CLM-004",
+      "customerName": "Arjit",
+      "policyNumber": "POL-11111",
+      "claimType": "Medical",
+      "status": "Settled",
+      "amount": 25000,
+      "dateSubmitted": "2024-06-12",
+      "lastUpdated": "2024-06-19"
+    },
+    {
+      "id": "CLM-005",
+      "customerName": "Arjit",
+      "policyNumber": "POL-11111",
+      "claimType": "Medical",
+      "status": "Submitted",
+      "amount": 25000,
+      "dateSubmitted": "2024-06-12",
+      "lastUpdated": "2024-06-19"
+    }
+  ],
+  "policyDetails": [
+    {
+      "id": "1",
+      "title": "Policy Detail 1",
+      "policyNumber": "POL-2024-HLT-001",
+      "holderName": "Sunil",
+      "coverage": "Comprehensive Health",
+      "premium": "₹450/month",
+      "status": "Active",
+      "expiryDate": "2025-03-15",
+      "details": "Covers medical consultations, surgeries, and emergency treatments with 80% coverage.",
+      "policyStartDate": "2024-01-15",
+      "policyEndDate": "2025-01-14",
+      "lastPremiumPaid": "2024-01-15",
+      "nextPremiumDue": "2025-01-15",
+      "sumInsured": "₹5,00,000",
+      "deductible": "₹10,000",
+      "coPayment": "10%",
+      "coverages": [
+        "Hospitalization",
+        "Pre & Post Hospitalization",
+        "Ambulance Charges",
+        "Day Care Procedures",
+        "Health Check-ups",
+        "Maternity Benefits"
+      ],
+      "beneficiaries": [
+        {
+          "name": "Sunil",
+          "relationship": "Self",
+          "age": 23,
+          "contact": "+91-9876543210",
+          "email": "sunil@email.com"
+        },
+        {
+          "name": "Meenakshi Reddy",
+          "relationship": "Spouse",
+          "age": 25,
+          "contact": "+91-9876543211",
+          "email": "meena@email.com"
+        }
+      ],
+      "address": {
+        "street": "123 Main Street",
+        "city": "Kurnool",
+        "state": "Andhra Pradesh",
+        "pincode": "518218",
+        "country": "India"
+      },
+      "agent": {
+        "name": "Madhu",
+        "contact": "+91-9876543212",
+        "email": "madhu@insurance.com"
+      },
+      "claimHistory": [
+        {
+          "claimId": "CLM001",
+          "date": "2024-06-15",
+          "amount": "₹25,000",
+          "status": "Settled",
+          "description": "Emergency Surgery"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Policy Detail 2",
+      "policyNumber": "POL-2024-DEN-002",
+      "holderName": "Arjit",
+      "coverage": "Dental Care",
+      "premium": "₹120/month",
+      "status": "Active",
+      "expiryDate": "2025-01-20",
+      "details": "Comprehensive dental coverage including cleanings, fillings, and major procedures.",
+      "policyStartDate": "2024-01-15",
+      "policyEndDate": "2025-01-14",
+      "lastPremiumPaid": "2024-01-15",
+      "nextPremiumDue": "2025-01-15",
+      "sumInsured": "₹5,00,000",
+      "deductible": "₹10,000",
+      "coPayment": "10%",
+      "coverages": [
+        "Hospitalization",
+        "Pre & Post Hospitalization",
+        "Ambulance Charges",
+        "Day Care Procedures",
+        "Health Check-ups",
+        "Maternity Benefits"
+      ],
+      "beneficiaries": [
+        {
+          "name": "Arjit",
+          "relationship": "Self",
+          "age": 18,
+          "contact": "+91-9876543210",
+          "email": "arjit@email.com"
+        },
+        {
+          "name": "",
+          "relationship": "",
+          "age": "",
+          "contact": "",
+          "email": ""
+        }
+      ],
+      "address": {
+        "street": "123 Main Street",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "pincode": "518000",
+        "country": "India"
+      },
+      "agent": {
+        "name": "Madhu",
+        "contact": "+91-9876543212",
+        "email": "madhu@insurance.com"
+      },
+      "claimHistory": [
+        {
+          "claimId": "CLM001",
+          "date": "2024-06-15",
+          "amount": "₹25,000",
+          "status": "Settled",
+          "description": "Emergency Surgery"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Policy Detail 3",
+      "policyNumber": "POL-2024-VIS-003",
+      "holderName": "Priya",
+      "coverage": "Vision Care",
+      "premium": "₹85/month",
+      "status": "Pending Renewal",
+      "expiryDate": "2024-12-30",
+      "details": "Eye exams, prescription glasses, and contact lenses with annual benefits.",
+      "policyStartDate": "2024-01-15",
+      "policyEndDate": "2025-01-14",
+      "lastPremiumPaid": "2024-01-15",
+      "nextPremiumDue": "2025-01-15",
+      "sumInsured": "₹5,00,000",
+      "deductible": "₹10,000",
+      "coPayment": "10%",
+      "coverages": [
+        "Hospitalization",
+        "Pre & Post Hospitalization",
+        "Ambulance Charges",
+        "Day Care Procedures",
+        "Health Check-ups",
+        "Maternity Benefits"
+      ],
+      "beneficiaries": [
+        {
+          "name": "Priya",
+          "relationship": "Self",
+          "age": 28,
+          "contact": "+91-9876543210",
+          "email": "priya@email.com"
+        },
+        {
+          "name": "Prasad",
+          "relationship": "Spouse",
+          "age": 32,
+          "contact": "+91-9876543211",
+          "email": "prasad@email.com"
+        }
+      ],
+      "address": {
+        "street": "123 Main Street",
+        "city": "Kurnool",
+        "state": "Andhra Pradesh",
+        "pincode": "518218",
+        "country": "India"
+      },
+      "agent": {
+        "name": "Madhu",
+        "contact": "+91-9876543212",
+        "email": "madhu@insurance.com"
+      },
+      "claimHistory": [
+        {
+          "claimId": "CLM001",
+          "date": "2024-06-15",
+          "amount": "₹25,000",
+          "status": "Settled",
+          "description": "Emergency Surgery"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Policy Detail 4",
+      "policyNumber": "POL-2024-VIS-004",
+      "holderName": "Priya",
+      "coverage": "Vision Care",
+      "premium": "₹85/month",
+      "status": "Pending Renewal",
+      "expiryDate": "2024-12-30",
+      "details": "Eye exams, prescription glasses, and contact lenses with annual benefits.",
+      "policyStartDate": "2024-01-15",
+      "policyEndDate": "2025-01-14",
+      "lastPremiumPaid": "2024-01-15",
+      "nextPremiumDue": "2025-01-15",
+      "sumInsured": "₹5,00,000",
+      "deductible": "₹10,000",
+      "coPayment": "10%",
+      "coverages": [
+        "Hospitalization",
+        "Pre & Post Hospitalization",
+        "Ambulance Charges",
+        "Day Care Procedures",
+        "Health Check-ups",
+        "Maternity Benefits"
+      ],
+      "beneficiaries": [
+        {
+          "name": "Priya",
+          "relationship": "Self",
+          "age": 28,
+          "contact": "+91-9876543210",
+          "email": "priya@email.com"
+        },
+        {
+          "name": "Prasad",
+          "relationship": "Spouse",
+          "age": 32,
+          "contact": "+91-9876543211",
+          "email": "prasad@email.com"
+        }
+      ],
+      "address": {
+        "street": "123 Main Street",
+        "city": "Kurnool",
+        "state": "Andhra Pradesh",
+        "pincode": "518218",
+        "country": "India"
+      },
+      "agent": {
+        "name": "Madhu",
+        "contact": "+91-9876543212",
+        "email": "madhu@insurance.com"
+      },
+      "claimHistory": [
+        {
+          "claimId": "CLM001",
+          "date": "2024-06-15",
+          "amount": "₹25,000",
+          "status": "Settled",
+          "description": "Emergency Surgery"
+        }
+      ]
+    }
+  ],
+  "officers": [
+    {
+      "id": "1",
+      "email": "john.doe@example.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "phone": "9876543210",
+      "role": "Level 1",
+      "password": "John@210"
+    },
+    {
+      "id": "2",
+      "email": "jane.smith@example.com",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "phone": "1234567890",
+      "role": "Level 1",
+      "password": "Jane@890"
+    }
+  ],
+  "hospitals": [
+    {
+      "id": "1",
+      "name": "City Hospital",
+      "email": "contact@cityhospital.com",
+      "phone": "1234567890",
+      "type": "Networked",
+      "address": "123 Main St, Cityville",
+      "images": [],
+      "password": "City@890"
+    },
+    {
+      "id": "2",
+      "name": "Green Valley Clinic",
+      "email": "info@greenvalley.com",
+      "phone": "9876543210",
+      "type": "Non-Networked",
+      "address": "456 Oak Ave, Townsville",
+      "images": [],
+      "password": "Green@210"
+    }
+  ],
+  "policies": [
+    {
+      "_id": "1",
+      "policy_id": 101,
+      "policy_number": "POL123456",
+      "policyholder_id": 1001,
+      "start_date": "2023-01-01",
+      "end_date": "2024-01-01",
+      "sum_assured": 100000,
+      "free_look_period_end": "2023-01-15",
+      "is_active": true,
+      "policy_type": "Individual",
+      "premium_amount": 5000,
+      "premium_frequency": "Monthly",
+      "next_premium_due": "2023-08-01",
+      "policy_status": "Active",
+      "renewal_date": "2024-01-01",
+      "grace_period_days": 30,
+      "waiting_period": {
+        "general": 30,
+        "pre_existing": 90
+      },
+      "no_claim_bonus": 10,
+      "policy_documents": [
+        {
+          "document_name": "Policy Document",
+          "file_url": "https://example.com/doc1.pdf",
+          "uploaded_date": "2023-01-01"
+        }
+      ],
+      "created_at": "2023-01-01",
+      "updated_at": "2023-07-01",
+      "created_by": "adminId123",
+      "id": "c8ac"
+    }
+  ],
+  "doctors": [
+    {
+      "id": "1",
+      "email": "alice.smith@example.com",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "phone": "9876543210",
+      "role": "field_doctor",
+      "specialisation": "Cardiology",
+      "place": "BTM Layout",
+      "isAvailabe": true,
+      "password": "Alice@210"
+    },
+    {
+      "id": "2",
+      "email": "bob.jones@example.com",
+      "firstName": "Bob",
+      "lastName": "Jones",
+      "phone": "1234567890",
+      "specialisation": "Neurology",
+      "place": "TC Palya, Ramamurthy Nagar",
+      "isAvailabe": false,
+      "password": "Bob@890"
+    },
+    {
+      "id": "fd001",
+      "firstName": "Dr. Virat",
+      "lastName": "Kohli",
+      "role": "Field Officer",
+      "password": "pass123",
+      "contact_number": "+919876543200",
+      "email": "ramesh.singh@medcare.com",
+      "image": "/virat.png",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "General Physician"
+    }
+  ],
+  "level1Officers": [
+    {
+      "id": "l1staff001",
+      "name": "Sunil Kumar",
+      "role": "Level1 Officer",
+      "password": "pass123",
+      "contact_number": "+919876543210",
+      "email": "sunil@gmail.com",
+      "specialization": "General Medicine",
+      "isAvailable": true,
+      "image": "/sunil.png"
+    },
+    {
+      "id": "l1staff002",
+      "name": "Dr. Priya Sharma",
+      "role": "Level1 Officer",
+      "password": "pass123",
+      "contact_number": "+919876543211",
+      "email": "priya.sharma@medcare.com",
+      "specialization": "Cardiology",
+      "isAvailable": true
+    },
+    {
+      "id": "l1staff003",
+      "name": "Dr. Rakesh Mehta",
+      "role": "Level1 Officer",
+      "password": "pass123",
+      "contact_number": "+918765432109",
+      "email": "rakesh.mehta@medcare.com",
+      "specialization": "Orthopedics",
+      "isAvailable": false
+    },
+    {
+      "id": "l1staff004",
+      "name": "Dr. Anjali Verma",
+      "role": "Level1 Officer",
+      "password": "pass123",
+      "contact_number": "+917654321098",
+      "email": "anjali.verma@medcare.com",
+      "specialization": "Pediatrics",
+      "isAvailable": true
+    }
+  ],
+  "level2Officers": [
+    {
+      "id": "l2staff001",
+      "name": "Madan Mohan Reddy",
+      "role": "Level2 Officer",
+      "password": "pass123",
+      "contact_number": "+919988776655",
+      "email": "madan@gmail.com",
+      "specialization": "General Medicine",
+      "isAvailable": true,
+      "image": "/madan.png"
+    },
+    {
+      "id": "l2staff002",
+      "name": "Dr. Priya Sharma",
+      "role": "Level2 Officer",
+      "password": "pass123",
+      "contact_number": "+919876543210",
+      "email": "priya.sharma.l2@medcare.com",
+      "specialization": "Cardiology",
+      "isAvailable": true
+    },
+    {
+      "id": "l2staff003",
+      "name": "Dr. Rakesh Mehta",
+      "role": "Level2 Officer",
+      "password": "pass123",
+      "contact_number": "+918765432109",
+      "email": "rakesh.mehta.l2@medcare.com",
+      "specialization": "Orthopedics",
+      "isAvailable": false
+    },
+    {
+      "id": "l2staff004",
+      "name": "Dr. Anjali Verma",
+      "role": "Level2 Officer",
+      "password": "pass123",
+      "contact_number": "+917654321098",
+      "email": "anjali.verma.l2@medcare.com",
+      "specialization": "Pediatrics",
+      "isAvailable": true
+    }
+  ],
+  "fieldDoctors": [
+    {
+      "id": "fd001",
+      "name": "Dr. Virat Kohli",
+      "role": "Field Officer",
+      "password": "pass123",
+      "contact_number": "+919876543200",
+      "email": "ramesh.singh@medcare.com",
+      "image": "/virat.png",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "General Physician"
+    },
+    {
+      "id": "fd002",
+      "name": "Dr. Smita Rao",
+      "role": "Field Officer",
+      "contact_number": "+919876543201",
+      "email": "smita.rao@medcare.com",
+      "isAvailable": false,
+      "place": "Bengaluru",
+      "specialization": "Pediatrician"
+    },
+    {
+      "id": "fd003",
+      "name": "Dr. Alok Gupta",
+      "role": "Field Officer",
+      "contact_number": "+918765432199",
+      "email": "alok.gupta@medcare.com",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "Dermatologist"
+    },
+    {
+      "id": "fd004",
+      "name": "Dr. Neha Shah",
+      "role": "Field Officer",
+      "contact_number": "+917654321097",
+      "email": "neha.shah@medcare.com",
+      "isAvailable": false,
+      "place": "Bengaluru",
+      "specialization": "Orthopedic"
+    },
+    {
+      "id": "fd005",
+      "name": "Dr. Vikas Sharma",
+      "role": "Field Officer",
+      "contact_number": "+916543210986",
+      "password": "pass123",
+      "email": "vikas.sharma@medcare.com",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "Cardiologist"
+    },
+    {
+      "id": "fd006",
+      "name": "Dr. Sneha Patel",
+      "role": "Field Officer",
+      "contact_number": "+915432109875",
+      "email": "sneha.patel@medcare.com",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "Gynecologist"
+    },
+    {
+      "id": "fd007",
+      "name": "Dr. Rajiv Singh",
+      "role": "Field Officer",
+      "contact_number": "+914321098764",
+      "email": "rajiv.singh@medcare.com",
+      "isAvailable": false,
+      "place": "Bengaluru",
+      "specialization": "Neurologist"
+    },
+    {
+      "id": "fd008",
+      "name": "Dr. Kavita Nair",
+      "role": "Field Officer",
+      "contact_number": "+913210987653",
+      "email": "kavita.nair@medcare.com",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "Oncologist"
+    },
+    {
+      "id": "fd009",
+      "name": "Dr. Manoj Joshi",
+      "role": "Field Officer",
+      "contact_number": "+912109876542",
+      "email": "manoj.joshi@medcare.com",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "Gastroenterologist"
+    },
+    {
+      "id": "fd010",
+      "name": "Dr. Neha Gupta",
+      "role": "Field Officer",
+      "contact_number": "+911098765431",
+      "email": "neha.gupta@medcare.com",
+      "isAvailable": false,
+      "place": "Bengaluru",
+      "specialization": "Endocrinologist"
+    },
+    {
+      "id": "fd011",
+      "name": "Dr. Suresh Pillai",
+      "role": "Field Officer",
+      "contact_number": "+910987654320",
+      "email": "suresh.pillai@medcare.com",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "Nephrologist"
+    },
+    {
+      "id": "fd012",
+      "name": "Dr. Meera Das",
+      "role": "Field Officer",
+      "contact_number": "+919876543218",
+      "email": "meera.das@medcare.com",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "Pulmonologist"
+    },
+    {
+      "id": "fd013",
+      "name": "Dr. Arvind Rao",
+      "role": "Field Officer",
+      "contact_number": "+918765432197",
+      "email": "arvind.rao@medcare.com",
+      "isAvailable": false,
+      "place": "Bengaluru",
+      "specialization": "Urologist"
+    },
+    {
+      "id": "fd014",
+      "name": "Dr. Pooja Chawla",
+      "role": "Field Officer",
+      "contact_number": "+917654321986",
+      "email": "pooja.chawla@medcare.com",
+      "isAvailable": true,
+      "place": "Bengaluru",
+      "specialization": "Ophthalmologist"
+    },
+    {
+      "id": "fd015",
+      "name": "Dr. Deepak Malhotra",
+      "role": "Field Officer",
+      "contact_number": "+916543219875",
+      "email": "deepak.malhotra@medcare.com",
+      "isAvailable": false,
+      "place": "Bengaluru",
+      "specialization": "ENT Specialist"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim789",
+      "claim_date": "2023-05-10T00:00:00.000Z",
+      "admission_date": "2023-05-01T00:00:00.000Z",
+      "discharge_date": "2023-05-08T00:00:00.000Z",
+      "total_amount_claimed": 1500000,
+      "status": "status_approved_by_field_doctor",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_001",
+      "hospital_id": "hosp456",
+      "documents": [
+        "doc1",
+        "doc2"
+      ],
+      "treatment": "Appendectomy",
+      "field_doctor_id": "fd001",
+      "queries": [
+        {
+          "queryId": "Q1751567939350_claim789",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-03T18:38:59.350Z",
+          "status": "closed_accepted",
+          "messages": [
+            {
+              "messageId": "M1751567939350",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim789. Please specify your question for the customer.",
+              "timestamp": "2025-07-03T18:38:59.350Z"
+            },
+            {
+              "messageId": "M1751823643510",
+              "sender": "Officer_ID_Placeholder",
+              "text": "how are you",
+              "timestamp": "2025-07-06T17:40:43.510Z"
+            }
+          ]
+        }
+      ],
+      "status_history": [
+        {
+          "status": "status_approved_by_field_doctor",
+          "changedBy": "fd001",
+          "changedAt": "2025-07-06T17:17:12.485Z"
+        },
+        {
+          "status": "status_approved_by_level1_officer",
+          "changedBy": "l1staff001",
+          "changedAt": "2025-07-06T17:22:46.910Z"
+        },
+        {
+          "status": "status_approved_by_level1_officer",
+          "changedBy": "l1staff001",
+          "changedAt": "2025-07-06T17:27:54.765Z"
+        },
+        {
+          "status": "status_queried",
+          "changedBy": "l2staff001",
+          "changedAt": "2025-07-06T17:35:05.484Z"
+        },
+        {
+          "status": "status_queried",
+          "changedBy": "l2staff001",
+          "changedAt": "2025-07-06T17:38:15.122Z"
+        }
+      ]
+    },
+    {
+      "id": "claim790",
+      "claim_date": "2023-06-15T00:00:00.000Z",
+      "admission_date": "2023-06-10T00:00:00.000Z",
+      "discharge_date": "2023-06-14T00:00:00.000Z",
+      "total_amount_claimed": 90000000,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_002",
+      "hospital_id": "hosp789",
+      "documents": [
+        "doc3"
+      ],
+      "treatment": "Gallbladder Removal",
+      "field_doctor_id": "fd001",
+      "queries": [
+        {
+          "queryId": "Q1751565117791_claim790",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-03T17:51:57.791Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751565117791",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim790. Please specify your question for the customer.",
+              "timestamp": "2025-07-03T17:51:57.791Z"
+            }
+          ]
+        },
+        {
+          "queryId": "Q1751740732572_claim790",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-05T18:38:52.572Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751740732572",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim790. Please specify your question for the customer.",
+              "timestamp": "2025-07-05T18:38:52.572Z"
+            }
+          ]
+        }
+      ],
+      "status_history": []
+    },
+    {
+      "id": "claim791",
+      "claim_date": "2023-07-01T00:00:00.000Z",
+      "admission_date": "2023-06-28T00:00:00.000Z",
+      "discharge_date": "2023-06-30T00:00:00.000Z",
+      "total_amount_claimed": 1200000,
+      "status": "status_settled",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_003",
+      "hospital_id": "hosp123",
+      "documents": [
+        "doc4",
+        "doc5",
+        "doc6"
+      ],
+      "treatment": "Knee Replacement",
+      "field_doctor_id": "fd001",
+      "status_history": [
+        {
+          "status": "status_approved_by_field_doctor",
+          "changedBy": "fd001",
+          "changedAt": "2025-07-07T11:58:21.512Z"
+        },
+        {
+          "status": "status_approved_by_level1_officer",
+          "changedBy": "l1staff001",
+          "changedAt": "2025-07-07T12:01:16.884Z"
+        },
+        {
+          "status": "status_approved_by_level2_officer",
+          "changedBy": "l2staff001",
+          "changedAt": "2025-07-07T12:02:16.911Z"
+        },
+        {
+          "status": "status_settled",
+          "changedBy": "l2staff001",
+          "changedAt": "2025-07-07T12:02:24.547Z"
+        }
+      ],
+      "queries": [
+        {
+          "queryId": "Q1751771590219_claim791",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-06T03:13:10.219Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751771590219",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim791. Please specify your question for the customer.",
+              "timestamp": "2025-07-06T03:13:10.219Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "claim792",
+      "claim_date": "2023-07-10T00:00:00.000Z",
+      "admission_date": "2023-07-05T00:00:00.000Z",
+      "discharge_date": "2023-07-09T00:00:00.000Z",
+      "total_amount_claimed": 5000000,
+      "status": "status_settled",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_004",
+      "hospital_id": "hosp456",
+      "documents": [],
+      "treatment": "Dengue Fever",
+      "field_doctor_id": "fd001",
+      "status_history": [
+        {
+          "status": "status_approved_by_field_doctor",
+          "changedBy": "fd001",
+          "changedAt": "2025-07-07T06:12:58.944Z"
+        },
+        {
+          "status": "status_approved_by_level1_officer",
+          "changedBy": "l1staff001",
+          "changedAt": "2025-07-07T06:14:12.831Z"
+        },
+        {
+          "status": "status_approved_by_level2_officer",
+          "changedBy": "l2staff001",
+          "changedAt": "2025-07-07T06:16:02.615Z"
+        },
+        {
+          "status": "status_settled",
+          "changedBy": "l2staff001",
+          "changedAt": "2025-07-07T06:16:05.613Z"
+        }
+      ],
+      "queries": []
+    },
+    {
+      "id": "claim793",
+      "claim_date": "2023-08-12T00:00:00.000Z",
+      "admission_date": "2023-08-10T00:00:00.000Z",
+      "discharge_date": "2023-08-11T00:00:00.000Z",
+      "total_amount_claimed": 75000,
+      "status": "status_queried",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_005",
+      "hospital_id": "hosp654",
+      "documents": [
+        "doc7"
+      ],
+      "treatment": "Cataract Surgery",
+      "field_doctor_id": "fd001",
+      "status_history": [
+        {
+          "status": "status_approved_by_field_doctor",
+          "changedBy": "fd001",
+          "changedAt": "2025-07-06T17:17:28.787Z"
+        },
+        {
+          "status": "status_approved_by_level1_officer",
+          "changedBy": "l1staff001",
+          "changedAt": "2025-07-06T17:23:40.269Z"
+        }
+      ],
+      "queries": [
+        {
+          "queryId": "Q1751822622535_claim793",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-06T17:23:42.535Z",
+          "status": "pending_customer_response",
+          "messages": [
+            {
+              "messageId": "M1751822622535",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim793. Please specify your question for the customer.",
+              "timestamp": "2025-07-06T17:23:42.535Z"
+            },
+            {
+              "messageId": "M1751822629901",
+              "sender": "Officer_ID_Placeholder",
+              "text": "hii",
+              "timestamp": "2025-07-06T17:23:49.901Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "claim794",
+      "claim_date": "2023-08-15T00:00:00.000Z",
+      "admission_date": "2023-08-13T00:00:00.000Z",
+      "discharge_date": "2023-08-14T00:00:00.000Z",
+      "total_amount_claimed": 110000,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_006",
+      "hospital_id": "hosp123",
+      "documents": [
+        "doc8",
+        "doc9"
+      ],
+      "treatment": "Hernia Repair",
+      "field_doctor_id": null,
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim795",
+      "claim_date": "2023-09-01T00:00:00.000Z",
+      "admission_date": "2023-08-25T00:00:00.000Z",
+      "discharge_date": "2023-08-30T00:00:00.000Z",
+      "total_amount_claimed": 200000,
+      "status": "status_raised",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_007",
+      "hospital_id": "hosp789",
+      "documents": [
+        "doc10"
+      ],
+      "treatment": "Coronary Angioplasty",
+      "field_doctor_id": null,
+      "queries": [
+        {
+          "queryId": "Q1751568125458_claim795",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-03T18:42:05.458Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751568125458",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim795. Please specify your question for the customer.",
+              "timestamp": "2025-07-03T18:42:05.458Z"
+            }
+          ]
+        }
+      ],
+      "status_history": []
+    },
+    {
+      "id": "claim796",
+      "claim_date": "2023-09-05T00:00:00.000Z",
+      "admission_date": "2023-09-01T00:00:00.000Z",
+      "discharge_date": "2023-09-04T00:00:00.000Z",
+      "total_amount_claimed": 60000,
+      "status": "status_settled",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_008",
+      "hospital_id": "hosp456",
+      "documents": [],
+      "treatment": "Malaria",
+      "field_doctor_id": "fd001",
+      "queries": [
+        {
+          "queryId": "Q1751568235924_claim796",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-03T18:43:55.924Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751568235924",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim796. Please specify your question for the customer.",
+              "timestamp": "2025-07-03T18:43:55.924Z"
+            }
+          ]
+        }
+      ],
+      "status_history": [
+        {
+          "status": "status_approved_by_field_doctor",
+          "changedBy": "fd001",
+          "changedAt": "2025-07-07T11:56:58.985Z"
+        },
+        {
+          "status": "status_approved_by_level1_officer",
+          "changedBy": "l1staff001",
+          "changedAt": "2025-07-07T12:00:07.849Z"
+        },
+        {
+          "status": "status_settled",
+          "changedBy": "l1staff001",
+          "changedAt": "2025-07-07T12:00:55.248Z"
+        }
+      ]
+    },
+    {
+      "id": "claim797",
+      "claim_date": "2023-09-20T00:00:00.000Z",
+      "admission_date": "2023-09-15T00:00:00.000Z",
+      "discharge_date": "2023-09-18T00:00:00.000Z",
+      "total_amount_claimed": 180000,
+      "status": "status_raised",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_009",
+      "hospital_id": "hosp123",
+      "documents": [
+        "doc11",
+        "doc12"
+      ],
+      "treatment": "Hip Replacement",
+      "field_doctor_id": null,
+      "queries": [
+        {
+          "queryId": "Q1751570232019_claim797",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-03T19:17:12.019Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751570232019",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim797. Please specify your question for the customer.",
+              "timestamp": "2025-07-03T19:17:12.019Z"
+            }
+          ]
+        }
+      ],
+      "status_history": []
+    },
+    {
+      "id": "claim798",
+      "claim_date": "2023-10-01T00:00:00.000Z",
+      "admission_date": "2023-09-28T00:00:00.000Z",
+      "discharge_date": "2023-09-30T00:00:00.000Z",
+      "total_amount_claimed": 950000000,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_010",
+      "hospital_id": "hosp789",
+      "documents": [
+        "doc13"
+      ],
+      "treatment": "Gallstone Removal",
+      "field_doctor_id": null,
+      "queries": [
+        {
+          "queryId": "Q1751698512550_claim798",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-05T06:55:12.550Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751698512550",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim798. Please specify your question for the customer.",
+              "timestamp": "2025-07-05T06:55:12.550Z"
+            }
+          ]
+        },
+        {
+          "queryId": "Q1751739908607_claim798",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-05T18:25:08.607Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751739908607",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim798. Please specify your question for the customer.",
+              "timestamp": "2025-07-05T18:25:08.607Z"
+            }
+          ]
+        }
+      ],
+      "status_history": []
+    },
+    {
+      "id": "claim799",
+      "claim_date": "2023-10-05T00:00:00.000Z",
+      "admission_date": "2023-10-01T00:00:00.000Z",
+      "discharge_date": "2023-10-04T00:00:00.000Z",
+      "total_amount_claimed": 70000,
+      "status": "status_raised",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_011",
+      "hospital_id": "hosp654",
+      "documents": [
+        "doc14"
+      ],
+      "treatment": "Fracture Treatment",
+      "field_doctor_id": null,
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim800",
+      "claim_date": "2023-10-10T00:00:00.000Z",
+      "admission_date": "2023-10-08T00:00:00.000Z",
+      "discharge_date": "2023-10-09T00:00:00.000Z",
+      "total_amount_claimed": 130000,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_012",
+      "hospital_id": "hosp456",
+      "documents": [
+        "doc15"
+      ],
+      "treatment": "Laparoscopic Surgery",
+      "field_doctor_id": null,
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim801",
+      "claim_date": "2023-11-01T00:00:00.000Z",
+      "admission_date": "2023-10-25T00:00:00.000Z",
+      "discharge_date": "2023-10-30T00:00:00.000Z",
+      "total_amount_claimed": 250000,
+      "status": "status_raised",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_013",
+      "hospital_id": "hosp123",
+      "documents": [
+        "doc16",
+        "doc17"
+      ],
+      "treatment": "Heart Bypass Surgery",
+      "field_doctor_id": null,
+      "queries": [
+        {
+          "queryId": "Q1751565038955_claim801",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-03T17:50:38.955Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751565038955",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim801. Please specify your question for the customer.",
+              "timestamp": "2025-07-03T17:50:38.955Z"
+            }
+          ]
+        }
+      ],
+      "status_history": []
+    },
+    {
+      "id": "claim802",
+      "claim_date": "2023-11-05T00:00:00.000Z",
+      "admission_date": "2023-11-01T00:00:00.000Z",
+      "discharge_date": "2023-11-04T00:00:00.000Z",
+      "total_amount_claimed": 80000,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_014",
+      "hospital_id": "hosp789",
+      "documents": [],
+      "treatment": "Typhoid",
+      "field_doctor_id": null,
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim803",
+      "claim_date": "2023-11-10T00:00:00.000Z",
+      "admission_date": "2023-11-08T00:00:00.000Z",
+      "discharge_date": "2023-11-09T00:00:00.000Z",
+      "total_amount_claimed": 105000,
+      "status": "status_raised",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_015",
+      "hospital_id": "hosp654",
+      "documents": [
+        "doc18"
+      ],
+      "treatment": "Kidney Stone Removal",
+      "field_doctor_id": null,
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim804",
+      "claim_date": "2023-12-01T00:00:00.000Z",
+      "admission_date": "2023-11-28T00:00:00.000Z",
+      "discharge_date": "2023-11-30T00:00:00.000Z",
+      "total_amount_claimed": 140000,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_016",
+      "hospital_id": "hosp456",
+      "documents": [
+        "doc19",
+        "doc20"
+      ],
+      "treatment": "Gallbladder Surgery",
+      "field_doctor_id": null,
+      "queries": [
+        {
+          "queryId": "Q1751565617673_claim804",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-03T18:00:17.673Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751565617673",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim804. Please specify your question for the customer.",
+              "timestamp": "2025-07-03T18:00:17.673Z"
+            }
+          ]
+        }
+      ],
+      "status_history": []
+    },
+    {
+      "id": "claim805",
+      "claim_date": "2023-12-05T00:00:00.000Z",
+      "admission_date": "2023-12-01T00:00:00.000Z",
+      "discharge_date": "2023-12-04T00:00:00.000Z",
+      "total_amount_claimed": 190000,
+      "status": "status_raised",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_017",
+      "hospital_id": "hosp123",
+      "documents": [
+        "doc21"
+      ],
+      "treatment": "Spinal Surgery",
+      "field_doctor_id": null,
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim806",
+      "claim_date": "2023-12-10T00:00:00.000Z",
+      "admission_date": "2023-12-07T00:00:00.000Z",
+      "discharge_date": "2023-12-09T00:00:00.000Z",
+      "total_amount_claimed": 65000,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_018",
+      "hospital_id": "hosp789",
+      "documents": [],
+      "treatment": "Viral Fever",
+      "field_doctor_id": null,
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim807",
+      "claim_date": "2024-01-01T00:00:00.000Z",
+      "admission_date": "2023-12-25T00:00:00.000Z",
+      "discharge_date": "2023-12-30T00:00:00.000Z",
+      "total_amount_claimed": 220000,
+      "status": "status_raised",
+      "pre_approval_received": true,
+      "policy_id": "policy_id_019",
+      "hospital_id": "hosp654",
+      "documents": [
+        "doc22",
+        "doc23"
+      ],
+      "treatment": "Liver Transplant",
+      "field_doctor_id": null,
+      "queries": [
+        {
+          "queryId": "Q1751564959133_claim807",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-03T17:49:19.133Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751564959133",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim807. Please specify your question for the customer.",
+              "timestamp": "2025-07-03T17:49:19.133Z"
+            }
+          ]
+        },
+        {
+          "queryId": "Q1751739940004_claim807",
+          "initiatedBy": "Officer_ID_Placeholder",
+          "initiatedAt": "2025-07-05T18:25:40.004Z",
+          "status": "open",
+          "messages": [
+            {
+              "messageId": "M1751739940004",
+              "sender": "System",
+              "text": "Query initiated for Claim ID: claim807. Please specify your question for the customer.",
+              "timestamp": "2025-07-05T18:25:40.004Z"
+            }
+          ]
+        }
+      ],
+      "status_history": []
+    },
+    {
+      "id": "claim808",
+      "claim_date": "2024-01-05T00:00:00.000Z",
+      "admission_date": "2024-01-01T00:00:00.000Z",
+      "discharge_date": "2024-01-04T00:00:00.000Z",
+      "total_amount_claimed": 88000,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "policy_id_020",
+      "hospital_id": "hosp456",
+      "documents": [
+        "doc24"
+      ],
+      "treatment": "Appendix Surgery",
+      "field_doctor_id": null,
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim1752129401187",
+      "claim_date": "2025-07-10T06:36:41.187Z",
+      "admission_date": "2025-07-23",
+      "discharge_date": "",
+      "total_amount_claimed": 1212,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "122121111",
+      "hospital_id": "xyz",
+      "documents": [
+        {
+          "name": "Medical Report - Arijt.pdf",
+          "size": "116.50 KB",
+          "type": "application/pdf"
+        }
+      ],
+      "treatment": "hospitalization",
+      "field_doctor_id": "Madan",
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim1752130678405",
+      "claim_date": "2025-07-10T06:57:58.405Z",
+      "admission_date": "2025-07-11",
+      "discharge_date": "",
+      "total_amount_claimed": 21,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "121",
+      "hospital_id": "fdg",
+      "documents": [
+        {
+          "name": "Medical Report - Arijt.pdf",
+          "size": "116.50 KB",
+          "type": "application/pdf"
+        }
+      ],
+      "treatment": "emergency",
+      "field_doctor_id": "dfg",
+      "status_history": [],
+      "queries": []
+    },
+    {
+      "id": "claim1752130955524",
+      "claim_date": "2025-07-10T07:02:35.524Z",
+      "admission_date": "2025-07-03",
+      "discharge_date": "",
+      "total_amount_claimed": 50000,
+      "status": "status_raised",
+      "pre_approval_received": false,
+      "policy_id": "2",
+      "hospital_id": "xyz",
+      "documents": [
+        {
+          "name": "Medical Report - Arijt.pdf",
+          "size": "116.50 KB",
+          "type": "application/pdf"
+        }
+      ],
+      "treatment": "emergency",
+      "field_doctor_id": null,
+      "status_history": [],
+      "queries": []
+    }
+  ]
+}

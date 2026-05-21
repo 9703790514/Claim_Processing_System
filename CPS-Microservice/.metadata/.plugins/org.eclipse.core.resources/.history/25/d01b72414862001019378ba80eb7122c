@@ -1,0 +1,5 @@
+package traning.iqgateway.mongoconfig;
+
+public class MongoConfig {
+
+}

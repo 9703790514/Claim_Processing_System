@@ -1,0 +1,147 @@
+package traning.iqgateway.entities;
+
+import java.time.LocalDate;
+import java.util.List;
+ 
+public class CustomerEO {
+ 
+	// MongoDB _id as int (your requirement)
+	private Integer _id;
+ 
+	private String customerName;
+	private String customerAddress;
+	private String customerAadhaar;
+	private String customerEmail;
+	private String customerPassword;
+	private LocalDate customerDob;
+	private String customerPhone;
+	private String nomineeName;
+	private LocalDate nomineeDob;
+	private String nomineeRelation;
+ 
+	/**
+	 * policies: each element is a List<Integer> where index 0 = policy_id, index 1
+	 * = cover_id
+	 */
+	private List<List<Integer>> policies;
+ 
+	// Constructors, getters, and setters
+ 
+	public CustomerEO() {
+	}
+ 
+	public CustomerEO(Integer _id, String customerName, String customerAddress, String customerAadhaar,
+			String customerEmail, String customerPassword, LocalDate customerDob, String customerPhone,
+			String nomineeName, LocalDate nomineeDob, String nomineeRelation, List<List<Integer>> policies) {
+		this._id = _id;
+		this.customerName = customerName;
+		this.customerAddress = customerAddress;
+		this.customerAadhaar = customerAadhaar;
+		this.customerEmail = customerEmail;
+		this.customerPassword = customerPassword;
+		this.customerDob = customerDob;
+		this.nomineeName = nomineeName;
+		this.nomineeDob = nomineeDob;
+		this.nomineeRelation = nomineeRelation;
+		this.policies = policies;
+		this.customerPhone = customerPhone;
+	}
+ 
+	// Getters and setters...
+	public Integer get_id() {
+		return _id;
+	}
+ 
+	public void set_id(Integer _id) {
+		this._id = _id;
+	}
+ 
+	public String getCustomerName() {
+		return customerName;
+	}
+ 
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+ 
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+ 
+	public void setCustomerAddress(String customerAddress) {
+		this.customerAddress = customerAddress;
+	}
+ 
+	public String getCustomerAadhaar() {
+		return customerAadhaar;
+	}
+ 
+	public void setCustomerAadhaar(String customerAadhaar) {
+		this.customerAadhaar = customerAadhaar;
+	}
+ 
+	public String getCustomerEmail() {
+		return customerEmail;
+	}
+ 
+	public void setCustomerEmail(String customerEmail) {
+		this.customerEmail = customerEmail;
+	}
+ 
+	public String getCustomerPassword() {
+		return customerPassword;
+	}
+ 
+	public void setCustomerPassword(String customerPassword) {
+		this.customerPassword = customerPassword;
+	}
+ 
+	public LocalDate getCustomerDob() {
+		return customerDob;
+	}
+ 
+	public void setCustomerDob(LocalDate customerDob) {
+		this.customerDob = customerDob;
+	}
+ 
+	public String getNomineeName() {
+		return nomineeName;
+	}
+ 
+	public void setNomineeName(String nomineeName) {
+		this.nomineeName = nomineeName;
+	}
+ 
+	public LocalDate getNomineeDob() {
+		return nomineeDob;
+	}
+ 
+	public void setNomineeDob(LocalDate nomineeDob) {
+		this.nomineeDob = nomineeDob;
+	}
+ 
+	public String getNomineeRelation() {
+		return nomineeRelation;
+	}
+ 
+	public void setNomineeRelation(String nomineeRelation) {
+		this.nomineeRelation = nomineeRelation;
+	}
+ 
+	public List<List<Integer>> getPolicies() {
+		return policies;
+	}
+ 
+	public void setPolicies(List<List<Integer>> policies) {
+		this.policies = policies;
+	}
+ 
+	public String getCustomerPhone() {
+		return customerPhone;
+	}
+ 
+	public void setCustomerPhone(String customerPhone) {
+		this.customerPhone = customerPhone;
+	}
+}
+ 

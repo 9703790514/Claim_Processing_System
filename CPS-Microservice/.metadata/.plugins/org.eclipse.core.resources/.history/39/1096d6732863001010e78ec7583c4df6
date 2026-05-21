@@ -1,0 +1,58 @@
+package traning.iqgateway.serviceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import traning.iqgateway.entities.ClaimWithDocsDTO;
+import traning.iqgateway.entities.ClaimsEO;
+import traning.iqgateway.entities.DocumentsDTO;
+import traning.iqgateway.repository.ClaimsRepository;
+import traning.iqgateway.service.ClaimsService;
+
+@Service
+public class ClaimsServiceImpl implements ClaimsService {
+
+    @Autowired
+    private ClaimsRepository claimsRepository;
+
+    @Autowired
+    private RestTemplate restTemplate;   // Injected RestTemplate bean (@LoadBalanced)
+
+    private static final String DOCUMENTS_SERVICE_URL = "http://documents-service/";
+
+    // Fetch claims by status and load documents for each
+    public List<ClaimWithDocsDTO> getClaimsWithDocumentsByStatus(String status) {
+        List<ClaimsEO> claimsList = claimsRepository.findByStatus(status);
+        List<ClaimWithDocsDTO> result = new ArrayList<>();
+
+        for (ClaimsEO claim : claimsList) {
+            DocumentsDTO docs = null;
+            try {
+                // Call documents microservice via Eureka and load-balanced RestTemplate
+                docs = restTemplate.getForObject(DOCUMENTS_SERVICE_URL + claim.getId(), DocumentsDTO.class);
+            } catch (Exception ex) {
+                // Log error or ignore if document not found or service down
+            }
+            result.add(new ClaimWithDocsDTO(claim, docs));
+        }
+
+        return result;
+    }
+
+    public ClaimsEO updateClaimStatus(Integer claimId, String newStatus){
+        Optional<ClaimsEO> optClaim = claimsRepository.findById(claimId);
+        if(optClaim.isEmpty()){
+            throw new RuntimeException("Claim not found for id: " + claimId);
+        }
+        ClaimsEO claim = optClaim.get();
+        claim.setStatus(newStatus);
+        claim.setLastUpdatedDate(java.time.Instant.now());
+        return claimsRepository.save(claim);
+    }
+}

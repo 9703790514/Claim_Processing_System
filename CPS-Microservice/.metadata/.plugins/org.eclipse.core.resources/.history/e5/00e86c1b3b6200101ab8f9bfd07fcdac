@@ -1,0 +1,7 @@
+package traning.iqgateway.serviceImpl;
+
+import traning.iqgateway.service.CustomerService;
+
+public class CustomerSeriveImpl implements CustomerService{
+
+}

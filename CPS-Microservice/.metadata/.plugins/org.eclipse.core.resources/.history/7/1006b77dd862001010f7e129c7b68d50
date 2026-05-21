@@ -1,0 +1,23 @@
+package training.iqgateway.config;
+
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper;
+import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import jakarta.annotation.PostConstruct;
+
+@Configuration
+public class MongoConfig {
+
+   @Autowired
+   private MappingMongoConverter mappingMongoConverter;
+
+   // This method runs after bean initialization
+   @PostConstruct
+   public void setUp() {
+       // Remove _class field from the Mongo documents globally
+       mappingMongoConverter.setTypeMapper(new DefaultMongoTypeMapper(null));
+   }
+}

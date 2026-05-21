@@ -1,0 +1,221 @@
+/* src/components/FieldDoctors.css - Enhanced Styling */
+
+/* General Container & Page Background */
+body {
+    background-color: #f0f2f5; /* A soft, light grey background for the entire page */
+    font-family: 'Inter', sans-serif; /* Using Inter font for a modern look */
+}
+
+/* Table Container - Main Card */
+.MuiTableContainer-root {
+    border-radius: 16px; /* More rounded corners for a softer look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Deeper, softer shadow */
+    background: #ffffff; /* Pure white background for the table card */
+    overflow: hidden; /* Ensures rounded corners clip content */
+    border: 1px solid #e0e6ed; /* Subtle border for definition */
+    margin-bottom: 30px; /* Space below the table */
+}
+
+/* Table Header */
+.MuiTableHead-root {
+    background: linear-gradient(to right, #eef2f7, #e6eaf0); /* Soft gradient for header */
+}
+
+.MuiTableHead-root th {
+    font-weight: 700; /* Bolder header text */
+    font-size: 1.05rem; /* Slightly larger font size */
+    color: #2c3e50; /* Darker, more professional text color */
+    padding: 16px 15px; /* More padding for spacious headers */
+    text-transform: uppercase; /* Uppercase for header labels */
+    letter-spacing: 0.05em; /* A bit of letter spacing */
+    border-bottom: 2px solid #dcdfe6; /* Stronger bottom border for header */
+}
+
+/* Table Row */
+.MuiTableRow-root {
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover */
+    border-bottom: 1px solid #f0f0f0; /* Light border between rows */
+}
+
+/* Table Row Hover */
+.MuiTableRow-root:hover {
+    background-color: #f8fbfd; /* Very light blue on hover */
+    transform: translateY(-1px); /* Subtle lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft shadow on hover */
+}
+
+/* Zebra Striping for better readability (optional, but nice) */
+.MuiTableBody-root .MuiTableRow-root:nth-of-type(odd) {
+    background-color: #fdfdfd; /* Slightly off-white for odd rows */
+}
+
+/* Table Cell */
+.MuiTableCell-root {
+    font-size: 0.95rem; /* Consistent font size */
+    padding: 14px 15px; /* Generous padding for cells */
+    color: #4a4a4a; /* Standard text color */
+    vertical-align: middle; /* Vertically align content */
+    border-bottom: none; /* Remove default cell borders if row border is enough */
+}
+
+/* Last Cell (Actions) */
+.MuiTableCell-root:last-child {
+    min-width: 140px; /* Slightly wider for action buttons */
+    text-align: right; /* Align actions to the right */
+}
+
+/* Chips for Availability */
+.MuiChip-root {
+    font-weight: 600;
+    font-size: 0.85em; /* Slightly smaller for chips */
+    letter-spacing: 0.03em;
+    border-radius: 20px; /* More rounded, pill-like shape */
+    padding: 2px 8px; /* Adjust padding */
+    height: auto; /* Allow height to adjust based on content */
+    min-width: 80px; /* Ensure consistent width */
+    justify-content: center; /* Center text within chip */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for chips */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Specific Chip Colors for Availability */
+.MuiChip-root[label="Available"] {
+    background-color: #4CAF50; /* Green */
+    color: #ffffff;
+}
+
+.MuiChip-root[label="On Duty"] {
+    background-color: #FFC107; /* Orange */
+    color: #333333; /* Dark text for contrast */
+}
+
+.MuiChip-root[label="Unavailable"] {
+    background-color: #F44336; /* Red */
+    color: #ffffff;
+}
+
+/* Typography - Page Title */
+.MuiTypography-h4 {
+    font-weight: 800; /* Extra bold */
+    letter-spacing: 0.04em;
+    color: #1A3E72; /* Deep blue from your theme */
+    text-align: center;
+    margin-bottom: 40px; /* More space below title */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+}
+
+/* Typography - Subheadings (e.g., in loading/error states) */
+.MuiTypography-h6 {
+    color: #555; /* Softer grey */
+    font-weight: 500;
+}
+
+/* Buttons - General Styling */
+.MuiButton-root {
+    border-radius: 8px !important; /* Consistent rounded corners */
+    text-transform: none !important; /* Keep text as is */
+    font-weight: 600 !important;
+    padding: 8px 18px !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+/* Primary Contained Button */
+.MuiButton-containedPrimary {
+    background: linear-gradient(to right, #1A3E72, #2a5298) !important; /* Blue gradient */
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(26, 62, 114, 0.25) !important;
+}
+
+.MuiButton-containedPrimary:hover {
+    background: linear-gradient(to right, #142a5a, #203a70) !important; /* Darker gradient on hover */
+    box-shadow: 0 6px 15px rgba(26, 62, 114, 0.35) !important;
+    transform: translateY(-1px);
+}
+
+/* Outlined Button */
+.MuiButton-outlined {
+    border-color: #1A3E72 !important;
+    color: #1A3E72 !important;
+    background-color: transparent !important;
+}
+
+.MuiButton-outlined:hover {
+    background-color: #e6f0ff !important; /* Light blue background on hover */
+    color: #1A3E72 !important;
+    box-shadow: 0 2px 8px rgba(26, 62, 114, 0.1);
+}
+
+/* Search Field */
+.MuiTextField-root .MuiOutlinedInput-root {
+    border-radius: 12px; /* Rounded search input */
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused {
+    border-color: #1A3E72 !important;
+    box-shadow: 0 0 0 3px rgba(26, 62, 114, 0.2); /* Focus ring */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .MuiTableHead-root th,
+    .MuiTableCell-root {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+    .MuiTableHead-root th {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .MuiTypography-h4 {
+        font-size: 2rem !important;
+        margin-bottom: 30px;
+    }
+    .MuiTableHead-root th,
+    .MuiTableCell-root {
+        font-size: 0.85rem;
+        padding: 10px 8px;
+    }
+    .MuiChip-root {
+        font-size: 0.75em;
+        min-width: 60px;
+    }
+    .MuiButton-root {
+        padding: 6px 12px !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .MuiTypography-h4 {
+        font-size: 1.7rem !important;
+        margin-bottom: 20px;
+    }
+    .MuiTableContainer-root {
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    }
+    .MuiTableHead-root th,
+    .MuiTableCell-root {
+        font-size: 0.8rem;
+        padding: 8px 5px;
+    }
+    .MuiTableCell-root:last-child {
+        min-width: 100px;
+    }
+    .MuiButton-root {
+        width: 100%; /* Full width buttons on small screens */
+        margin-top: 10px !important;
+    }
+    .MuiButton-root + .MuiButton-root {
+        margin-left: 0 !important; /* Stack buttons */
+    }
+}

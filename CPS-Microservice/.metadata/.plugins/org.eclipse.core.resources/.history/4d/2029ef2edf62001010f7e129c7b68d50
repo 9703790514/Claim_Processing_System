@@ -1,0 +1,97 @@
+package traning.iqgateway.serviceImpl;
+
+import java.time.OffsetDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.iqgateway.model.ClaimsEO;
+import com.iqgateway.model.CustomerEO;
+import com.iqgateway.repository.ClaimsRepository;
+import com.iqgateway.repository.CustomerRepository;
+import com.iqgateway.service.ClaimsService;
+
+@Service
+public class ClaimsServiceImpl implements ClaimsService {
+
+    @Autowired
+    private ClaimsRepository claimsRepository;
+
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    // TODO: Inject RestTemplate or FeignClient to call Documents MS for doc_id, skipped here for brevity
+
+    @Override
+    public List<ClaimsEO> getClaimsByCustomerId(Integer customerId) {
+        return claimsRepository.findAll()
+                .stream()
+                .filter(c -> c.getCustomerId() != null && c.getCustomerId().equals(customerId))
+                .toList();
+    }
+
+    @Override
+    public ClaimsEO addClaim(ClaimsEO claim) {
+        if (claim == null) {
+            throw new IllegalArgumentException("Claim must not be null");
+        }
+
+        // Verify customer exists and fetch to ensure customerId validity
+        CustomerEO customer = customerRepository.findById(claim.getCustomerId())
+                .orElseThrow(() -> new RuntimeException("Customer not found with id: " + claim.getCustomerId()));
+
+        // Auto-set fields
+        claim.setId(null); // Do not allow manual setting id
+        claim.setDocId(null); // Will be set from Documents microservice later (currently null)
+        claim.setApprovedAmount(null);
+        claim.setStatus("Raised By Customer");
+        // Set submittedDate to now (string or your preferred format)
+        claim.setSubmittedDate(OffsetDateTime.now().toString());
+        claim.setLastUpdatedDate(OffsetDateTime.now());
+
+        // Set customerId explicitly from lookup customer
+        claim.setCustomerId(customer.getId());
+
+        return claimsRepository.save(claim);
+    }
+
+    @Override
+    public ClaimsEO updateClaim(Integer claimId, ClaimsEO claimUpdate) {
+        ClaimsEO existingClaim = claimsRepository.findById(claimId)
+                .orElseThrow(() -> new RuntimeException("Claim not found with id: " + claimId));
+
+        // Restrict editing immutable fields
+        // Do NOT update: id, customerId, submittedDate
+        // Update docId, approvedAmount, status, feedback, medicalValid, givenPolicyId, lastUpdatedDate etc.
+
+        if (claimUpdate.getDocId() != null) {
+            existingClaim.setDocId(claimUpdate.getDocId());
+        }
+
+        // approvedAmount and status controlled
+        existingClaim.setApprovedAmount(null); // Reset to null as per your rule
+        existingClaim.setStatus("Raised By Customer"); // Reset default status; you can modify logic as needed
+
+        // Update other editable fields
+        existingClaim.setFeedback(claimUpdate.getFeedback());
+        existingClaim.setMedicalValid(claimUpdate.getMedicalValid());
+        existingClaim.setGivenPolicyId(claimUpdate.getGivenPolicyId());
+        existingClaim.setHospitalId(claimUpdate.getHospitalId());
+        existingClaim.setExpectedAmount(claimUpdate.getExpectedAmount());
+        // etc.
+
+        // Update last updated date to current time
+        existingClaim.setLastUpdatedDate(OffsetDateTime.now());
+
+        return claimsRepository.save(existingClaim);
+    }
+
+    @Override
+    public void deleteClaim(Integer claimId) {
+        if (!claimsRepository.existsById(claimId)) {
+            throw new RuntimeException("Claim not found with id: " + claimId);
+        }
+        claimsRepository.deleteById(claimId);
+    }
+}

@@ -1,0 +1,29 @@
+package traning.iqgateway.mongoconfig;
+
+package traning.iqgateway.config;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
+import org.springframework.data.mongodb.core.convert.MongoCustomConversions;
+
+import traning.iqgateway.converter.PoliciesReadConverter;
+
+@Configuration
+public class MongoConfig extends AbstractMongoClientConfiguration {
+
+    @Override
+    protected String getDatabaseName() {
+        return "CPS"; // Replace with your DB name
+    }
+
+    @Override
+    public MongoCustomConversions customConversions() {
+        List<Converter<?, ?>> converters = new ArrayList<>();
+        converters.add(new PoliciesReadConverter());
+        return new MongoCustomConversions(converters);
+    }
+}

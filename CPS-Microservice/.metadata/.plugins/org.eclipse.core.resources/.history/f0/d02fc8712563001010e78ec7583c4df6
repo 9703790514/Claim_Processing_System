@@ -1,0 +1,50 @@
+package traning.iqgateway.serviceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import traning.iqgateway.entities.ClaimWithDocsDTO;
+import traning.iqgateway.entities.ClaimsEO;
+import traning.iqgateway.repository.ClaimsRepository;
+import traning.iqgateway.service.ClaimsService;
+
+@Service
+public class ClaimsServiceImpl implements ClaimsService {
+
+    @Autowired
+    private ClaimsRepository claimsRepo;
+
+    @Autowired
+    private DocumentClient documentClient;
+
+    public List<ClaimWithDocsDTO> getClaimsWithDocumentsByStatus(String status){
+        List<ClaimsEO> claimsList = claimsRepo.findByStatus(status);
+        List<ClaimWithDocsDTO> result = new ArrayList()<>();
+
+        for(ClaimsEO claim : claimsList){
+            DocumentsEO doc = null;
+            try {
+                doc = documentClient.getDocumentByClaimId(claim.getId());
+            } catch (Exception e) {
+                // Handle document not found or service down etc
+            }
+            result.add(new ClaimWithDocsDTO(claim, doc));
+        }
+        return result;
+    }
+
+    public ClaimsEO updateClaimStatus(Integer claimId, String newStatus){
+        Optional<ClaimsEO> optClaim = claimsRepo.findById(claimId);
+        if(optClaim.isEmpty()){
+            throw new RuntimeException("Claim not found for id: " + claimId);
+        }
+        ClaimsEO claim = optClaim.get();
+        claim.setStatus(newStatus);
+        claim.setLastUpdatedDate(java.time.Instant.now());
+        return claimsRepo.save(claim);
+    }
+}

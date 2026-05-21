@@ -1,0 +1,7 @@
+package traning.iqgateway.service;
+
+@FeignClient(name = "documents-service")  // Eureka registered service ID
+public interface DocumentClient {
+    @GetMapping("/documents/claim/{claimId}")
+    DocumentsEO getDocumentByClaimId(@PathVariable("claimId") Integer claimId);
+}

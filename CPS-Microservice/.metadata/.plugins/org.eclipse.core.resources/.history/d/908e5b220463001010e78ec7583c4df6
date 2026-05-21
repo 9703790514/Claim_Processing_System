@@ -1,0 +1,42 @@
+package traning.iqgateway.serviceImpl;
+
+import org.springframework.stereotype.Service;
+
+import traning.iqgateway.service.ClaimsService;
+
+@Service
+public class ClaimsServiceImpl implements ClaimsService {
+
+    @Autowired
+    private ClaimsRepository claimsRepo;
+
+    @Autowired
+    private DocumentClient documentClient;
+
+    public List<ClaimWithDocsDTO> getClaimsWithDocumentsByStatus(String status){
+        List<ClaimsEO> claimsList = claimsRepo.findByStatus(status);
+        List<ClaimWithDocsDTO> result = new ArrayList<>();
+
+        for(ClaimsEO claim : claimsList){
+            DocumentsEO doc = null;
+            try {
+                doc = documentClient.getDocumentByClaimId(claim.getId());
+            } catch (Exception e) {
+                // Handle document not found or service down etc
+            }
+            result.add(new ClaimWithDocsDTO(claim, doc));
+        }
+        return result;
+    }
+
+    public ClaimsEO updateClaimStatus(Integer claimId, String newStatus){
+        Optional<ClaimsEO> optClaim = claimsRepo.findById(claimId);
+        if(optClaim.isEmpty()){
+            throw new RuntimeException("Claim not found for id: " + claimId);
+        }
+        ClaimsEO claim = optClaim.get();
+        claim.setStatus(newStatus);
+        claim.setLast_updated_date(java.time.Instant.now().toString());
+        return claimsRepo.save(claim);
+    }
+}

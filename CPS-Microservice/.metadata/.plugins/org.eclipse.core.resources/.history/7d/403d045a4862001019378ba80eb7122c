@@ -1,0 +1,31 @@
+package traning.iqgateway.converter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.bson.Document;
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
+
+/**
+ * Converts the MongoDB list of documents [{policy_id, cover_id}, ...]
+ * into Java List<List<Integer>> ([[policy_id, cover_id], ...])
+ */
+@Component
+public class PoliciesReadConverter implements Converter<List<Document>, List<List<Integer>>> {
+
+    @Override
+    public List<List<Integer>> convert(List<Document> source) {
+        List<List<Integer>> policiesList = new ArrayList<>();
+        if (source == null) return policiesList;
+        for (Document doc : source) {
+            Integer policyId = doc.getInteger("policy_id");
+            Integer coverId = doc.getInteger("cover_id");
+            List<Integer> innerList = new ArrayList<>();
+            innerList.add(policyId != null ? policyId : 0);
+            innerList.add(coverId != null ? coverId : 0);
+            policiesList.add(innerList);
+        }
+        return policiesList;
+    }
+}

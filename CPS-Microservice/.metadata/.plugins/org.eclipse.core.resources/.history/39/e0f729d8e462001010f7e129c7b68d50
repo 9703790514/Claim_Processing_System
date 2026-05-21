@@ -1,0 +1,25 @@
+package traning.iqgateway.serviceImpl;
+
+@Autowired
+private DocumentsClientService documentsClientService;
+
+@Override
+public ClaimsEO addClaim(ClaimsEO claim) {
+    // existing validations & claim save (without docId)
+
+    ClaimsEO savedClaim = claimsRepository.save(claim);
+
+    // Create DocumentsDTO with data, at least including claim_id = savedClaim.getId()
+    DocumentsDTO docsDTO = new DocumentsDTO();
+    docsDTO.setClaim_id(savedClaim.getId());
+    // Set other document fields as per your business logic or input...
+
+    // Call Documents microservice to save documents
+    DocumentsDTO savedDocument = documentsClientService.uploadDocuments(docsDTO);
+
+    // Update claim with docId returned from Documents microservice
+    savedClaim.setDocId(savedDocument.getClaim_id()); // or savedDocument.getId() if you add id field to DTO
+    savedClaim = claimsRepository.save(savedClaim);
+
+    return savedClaim;
+}

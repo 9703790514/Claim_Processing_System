@@ -1,0 +1,125 @@
+.contact-container {
+  width: 100%;
+
+  display: flex;
+  gap: 3rem;
+  background: #fff;
+  border: 1px solid #e0e7ef;
+
+  padding: 2.5rem 2rem;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1 1 280px;
+  min-width: 220px;
+  padding-right: 2rem;
+  border-right: 2px solid #e0e7ef;
+}
+
+.contact-info h2 {
+  color: #1e3a8a;
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  color: #374151;
+  font-size: 1.08rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-info a:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
+}
+
+.contact-form {
+  flex: 2 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #1e3a8a;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 0.4rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e0e7ef;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.09);
+}
+
+.contact-form button {
+  background: linear-gradient(90deg, #2563eb 0%, #1e3a8a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.09);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 100%);
+  transform: scale(1.04);
+}
+
+.contact-success {
+  margin-top: 1rem;
+  color: #10b981;
+  font-weight: 600;
+  font-size: 1.05rem;
+  background: #e0f9f1;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.06);
+}
+
+@media (max-width: 800px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 1.2rem 0.7rem;
+    gap: 2rem;
+  }
+  .contact-info {
+    border-right: none;
+    border-bottom: 2px solid #e0e7ef;
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}

@@ -1,0 +1,163 @@
+package training.iqgateway.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Data
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Document(collection="documents")
+public class DocumentsEO {
+	
+	@Id
+	private Integer _id;
+	
+	private Integer claim_id;
+	
+	private String blood_test;
+	
+	private String admission_note;
+	
+	private String prescription;
+	
+	private String xray_report;
+	
+	private String insurance_form;
+	
+	private String discharge_summary;
+	
+	private String other;
+	
+	private String last_updated;
+	
+	private Integer verified_by;
+
+	public DocumentsEO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public DocumentsEO(Integer _id, Integer claim_id, String blood_test, String admission_note, String prescription,
+			String xray_report, String insurance_form, String discharge_summary, String other, String last_updated,
+			Integer verified_by) {
+		super();
+		this._id = _id;
+		this.claim_id = claim_id;
+		this.blood_test = blood_test;
+		this.admission_note = admission_note;
+		this.prescription = prescription;
+		this.xray_report = xray_report;
+		this.insurance_form = insurance_form;
+		this.discharge_summary = discharge_summary;
+		this.other = other;
+		this.last_updated = last_updated;
+		this.verified_by = verified_by;
+	}
+
+	public Integer get_id() {
+		return _id;
+	}
+
+	public void set_id(Integer _id) {
+		this._id = _id;
+	}
+
+	public Integer getClaim_id() {
+		return claim_id;
+	}
+
+	public void setClaim_id(Integer claim_id) {
+		this.claim_id = claim_id;
+	}
+
+	public String getBlood_test() {
+		return blood_test;
+	}
+
+	public void setBlood_test(String blood_test) {
+		this.blood_test = blood_test;
+	}
+
+	public String getAdmission_note() {
+		return admission_note;
+	}
+
+	public void setAdmission_note(String admission_note) {
+		this.admission_note = admission_note;
+	}
+
+	public String getPrescription() {
+		return prescription;
+	}
+
+	public void setPrescription(String prescription) {
+		this.prescription = prescription;
+	}
+
+	public String getXray_report() {
+		return xray_report;
+	}
+
+	public void setXray_report(String xray_report) {
+		this.xray_report = xray_report;
+	}
+
+	public String getInsurance_form() {
+		return insurance_form;
+	}
+
+	public void setInsurance_form(String insurance_form) {
+		this.insurance_form = insurance_form;
+	}
+
+	public String getDischarge_summary() {
+		return discharge_summary;
+	}
+
+	public void setDischarge_summary(String discharge_summary) {
+		this.discharge_summary = discharge_summary;
+	}
+
+	public String getOther() {
+		return other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
+	}
+
+	public String getLast_updated() {
+		return last_updated;
+	}
+
+	public void setLast_updated(String last_updated) {
+		this.last_updated = last_updated;
+	}
+
+	public Integer getVerified_by() {
+		return verified_by;
+	}
+
+	public void setVerified_by(Integer verified_by) {
+		this.verified_by = verified_by;
+	}
+
+	@Override
+	public String toString() {
+		return "DocumentsEO [_id=" + _id + ", claim_id=" + claim_id + ", blood_test=" + blood_test + ", admission_note="
+				+ admission_note + ", prescription=" + prescription + ", xray_report=" + xray_report
+				+ ", insurance_form=" + insurance_form + ", discharge_summary=" + discharge_summary + ", other=" + other
+				+ ", last_updated=" + last_updated + ", verified_by=" + verified_by + "]";
+	}
+	
+	
+
+}

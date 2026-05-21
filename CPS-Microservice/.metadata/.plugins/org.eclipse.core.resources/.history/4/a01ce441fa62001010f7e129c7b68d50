@@ -1,0 +1,48 @@
+package traning.iqgateway.serviceImpl;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import traning.iqgateway.entities.CustomerEO;
+import traning.iqgateway.entities.PolicyEntry;
+import traning.iqgateway.entities.PoliciesEO;
+import traning.iqgateway.repository.CustomerRepository;
+import traning.iqgateway.repository.PoliciesRepository;
+import traning.iqgateway.service.PoliciesService;
+
+@Service
+public class PoliciesServiceImpl implements PoliciesService {
+
+	@Autowired
+	private PoliciesRepository policiesRepository;
+
+	@Autowired
+	private CustomerRepository customerRepository;
+
+	@Override
+	public List<PoliciesEO> getAllPolicies() {
+		return policiesRepository.findAll();
+	}
+
+	@Override
+	public List<PoliciesEO> getPoliciesByCustomerId(Integer customerId) {
+		CustomerEO customer = customerRepository.findById(customerId)
+				.orElseThrow(() -> new RuntimeException("Customer not found with id: " + customerId));
+
+		List<Integer> policyIds = customer.getPolicies().stream().map(PolicyEntry::getPolicyId)
+				.collect(Collectors.toList());
+
+		if (policyIds.isEmpty()) {
+			return List.of(); // empty list if no policies
+		}
+
+		Iterable<PoliciesEO> iterable = policiesRepository.findAllById(policyIds);
+
+		return StreamSupport.stream(iterable.spliterator(), false).collect(Collectors.toList());
+	}
+
+}

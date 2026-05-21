@@ -1,0 +1,41 @@
+package traning.iqgateway.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import traning.iqgateway.entities.CustomerEO;
+import traning.iqgateway.service.CustomerService;
+
+public class CustomerSeriveImpl implements CustomerService{
+
+	@Override
+	public CustomerEO createCustomer(CustomerEO customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<CustomerEO> getCustomerById(Integer id) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public List<CustomerEO> getAllCustomers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CustomerEO updateCustomer(Integer id, CustomerEO customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteCustomer(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

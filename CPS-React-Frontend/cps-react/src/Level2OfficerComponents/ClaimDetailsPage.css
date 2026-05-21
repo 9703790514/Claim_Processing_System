@@ -1,0 +1,264 @@
+/* src/components/Level1OfficerComponents/ClaimDetailsPage.css - Enhanced Styling */
+
+/* --- CSS Variables for Theming --- */
+:root {
+    /* Colors */
+    --primary-blue-light: #e6f7ff;
+    --primary-blue-gradient-start: #f0f8ff;
+    --primary-blue-gradient-end: #e6f7ff;
+    --shadow-color: rgba(0, 139, 139, 0.18); /* Slightly adjusted for a touch more depth */
+    --border-color: #cceeff;
+    --text-dark-teal: #004d40;
+    --text-medium-teal: #00796b;
+    --text-dark: #333333;
+    --divider-color: #a7d9de;
+    --row-hover-bg: #f7fcff;
+    --button-primary: #006064;
+    --button-hover-bg: #e0f2f7;
+    --button-hover-border: #004d40;
+    --button-hover-text: #004d40;
+    --subtle-border-dash: #e0f2f7;
+
+    /* Spacing */
+    --space-sm: 15px;
+    --space-md: 25px;
+    --space-lg: 40px;
+    --space-xl: 50px; /* New, for larger overall margins */
+
+    /* Border Radius */
+    --border-radius-sm: 12px;
+    --border-radius-md: 20px;
+    --border-radius-lg: 30px; /* Slightly larger for main container */
+
+    /* Shadows */
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 15px 45px var(--shadow-color);
+    --shadow-button: 0 4px 10px rgba(0, 96, 100, 0.1);
+    --shadow-button-hover: 0 8px 20px rgba(0, 96, 100, 0.25); /* More pronounced hover shadow */
+
+    /* Transitions */
+    --transition-ease: 0.3s ease-in-out;
+}
+
+/* --- Main Container for Claim Details Page --- */
+.claim-details-container {
+    max-width: 800px; /* Slightly increased max-width for even more spacious feel */
+    margin: var(--space-lg) auto var(--space-xl) auto; /* Top, horizontal-center, bottom */
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, var(--primary-blue-gradient-start), var(--primary-blue-gradient-end));
+    border-radius: var(--border-radius-md); /* Consistent with variable */
+    box-shadow: var(--shadow-medium);
+    font-family: 'Inter', sans-serif;
+    border: 1px solid var(--border-color);
+    animation: fadeIn 0.9s ease-out forwards; /* Slightly longer, 'forwards' keeps the end state */
+    position: relative; /* Needed for potential future pseudo-elements */
+    overflow: hidden; /* Ensures shadows/elements don't bleed out */
+}
+
+/* Optional: Add a subtle background pattern or element */
+.claim-details-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(204, 238, 255, 0.5) 0%, rgba(204, 238, 255, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.claim-details-container::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(167, 217, 222, 0.4) 0%, rgba(167, 217, 222, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); } /* Start a bit lower */
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Page Title --- */
+.claim-details-title {
+    font-size: 3.2rem; /* Even larger, bolder title */
+    font-weight: 800;
+    color: var(--text-dark-teal);
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.8px; /* Tighter for a stronger impact */
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    position: relative;
+    padding-bottom: 10px; /* Space for an underline effect */
+}
+
+.claim-details-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px; /* Short underline */
+    height: 4px;
+    background-color: var(--text-medium-teal); /* Color matching labels */
+    border-radius: 2px;
+}
+
+
+/* --- Divider --- */
+.claim-details-divider {
+    margin: var(--space-md) 0 var(--space-lg) 0; /* More balanced spacing: top, 0, bottom */
+    border: none; /* Remove default border */
+    border-top: 3px solid var(--divider-color); /* Thicker, defined border */
+    border-radius: 3px;
+    opacity: 0.8; /* Slightly subtle */
+}
+
+/* --- Detail Rows (Label and Value) --- */
+.claim-details-row {
+    display: flex;
+    align-items: flex-start; /* Align to the top of the content within the row */
+    margin-bottom: var(--space-sm);
+    padding: 10px 0; /* Vertical padding for each row */
+    border-bottom: 1px dashed var(--subtle-border-dash);
+    transition: background-color var(--transition-ease);
+}
+
+.claim-details-row:last-child {
+    border-bottom: none;
+}
+
+.claim-details-row:hover {
+    background-color: var(--row-hover-bg);
+}
+
+/* --- Detail Label --- */
+.claim-details-label {
+    flex: 0 0 220px; /* Slightly wider fixed width for labels */
+    font-weight: 700;
+    color: var(--text-medium-teal);
+    font-size: 1.15rem; /* Slightly larger label font */
+    padding-right: 25px; /* More space between label and value */
+    text-align: right;
+    line-height: 1.6; /* Ensure good readability with multi-line values */
+}
+
+/* --- Detail Value --- */
+.claim-details-value {
+    flex: 1;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    word-break: break-word;
+    line-height: 1.6; /* Consistent line height with label */
+    font-weight: 500; /* Slightly less bold than label, but not too light */
+}
+
+/* --- Back Button --- */
+.claim-details-back-btn {
+    margin-top: var(--space-lg) !important;
+    margin-bottom: 0 !important;
+    font-weight: 700 !important;
+    color: var(--button-primary) !important;
+    border-color: var(--button-primary) !important;
+    padding: 14px 30px !important; /* Larger padding for a more substantial button */
+    border-radius: 12px !important; /* More rounded button */
+    transition: all var(--transition-ease) !important;
+    box-shadow: var(--shadow-button);
+    display: block; /* Make it a block element to control margin: auto */
+    margin-left: auto; /* Center the button if it's not full width */
+    margin-right: auto;
+    text-transform: uppercase; /* Make text uppercase for a professional look */
+    letter-spacing: 0.5px;
+}
+
+.claim-details-back-btn:hover {
+    background: var(--button-hover-bg) !important;
+    border-color: var(--button-hover-border) !important;
+    color: var(--button-hover-text) !important;
+    transform: translateY(-3px); /* More pronounced lift effect on hover */
+    box-shadow: var(--shadow-button-hover); /* Enhanced shadow on hover */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .claim-details-container {
+        padding: var(--space-md);
+        margin: var(--space-md) auto;
+        border-radius: var(--border-radius-sm);
+        max-width: 90%; /* Allow it to take more width on smaller screens */
+    }
+
+    .claim-details-container::before,
+    .claim-details-container::after {
+        display: none; /* Hide decorative elements on small screens */
+    }
+
+    .claim-details-title {
+        font-size: 2.5rem;
+        margin-bottom: var(--space-sm);
+        letter-spacing: normal;
+    }
+    .claim-details-title::after {
+        width: 40px; /* Shorter underline on small screens */
+        height: 3px;
+    }
+
+    .claim-details-divider {
+        margin: var(--space-sm) 0 var(--space-md) 0;
+        border-top: 2px solid var(--divider-color);
+    }
+
+    .claim-details-row {
+        flex-direction: column; /* Stack label and value on small screens */
+        align-items: flex-start;
+        margin-bottom: 10px;
+        padding: 5px 0;
+    }
+
+    .claim-details-label {
+        flex: none;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+        padding-right: 0;
+        font-size: 1.05rem;
+    }
+
+    .claim-details-value {
+        font-size: 1rem;
+    }
+
+    .claim-details-back-btn {
+        width: 100%; /* Full width button */
+        padding: 12px 25px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .claim-details-container {
+        padding: 20px;
+        margin: 15px auto;
+        border-radius: var(--border-radius-sm);
+    }
+
+    .claim-details-title {
+        font-size: 2rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    .claim-details-label,
+    .claim-details-value {
+        font-size: 0.95rem;
+    }
+
+    .claim-details-back-btn {
+        padding: 10px 20px !important;
+    }
+}

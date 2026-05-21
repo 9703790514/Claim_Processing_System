@@ -1,0 +1,111 @@
+package traning.iqgateway.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import traning.iqgateway.entities.CoversEO;
+import traning.iqgateway.entities.CustomerEO;
+import traning.iqgateway.entities.PoliciesEO;
+import traning.iqgateway.service.CoversService;
+import traning.iqgateway.service.CustomerService;
+import traning.iqgateway.service.PoliciesService;
+
+@RestController
+@RequestMapping("/customer")
+public class CustomerController {
+
+    
+    @Autowired
+    private CustomerService customerService;
+    
+    @Autowired
+    private PoliciesService policiesService;
+    
+    @Autowired
+    private CoversService coverService;
+
+    // Create customer
+    @PostMapping("/addCustomer")
+    public ResponseEntity<CustomerEO> createCustomer(@RequestBody CustomerEO customer) {
+        CustomerEO createdCustomer = customerService.createCustomer(customer);
+        return ResponseEntity.ok(createdCustomer);
+    }
+
+    // Get all customers
+    @GetMapping("/allCustomer")
+    public ResponseEntity<List<CustomerEO>> getAllCustomers() {
+        List<CustomerEO> customers = customerService.getAllCustomers();
+        return ResponseEntity.ok(customers);
+    }
+
+    // Get customer by id
+    @GetMapping("/{id}")
+    public ResponseEntity<CustomerEO> getCustomerById(@PathVariable Integer id) {
+        return customerService.getCustomerById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    // Update customer
+    @PutMapping("/{id}")
+    public ResponseEntity<CustomerEO> updateCustomer(@PathVariable Integer id, @RequestBody CustomerEO customer) {
+        try {
+            CustomerEO updatedCustomer = customerService.updateCustomer(id, customer);
+            return ResponseEntity.ok(updatedCustomer);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    // Delete customer
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable Integer id) {
+        customerService.deleteCustomer(id);
+        return ResponseEntity.noContent().build();
+    }
+    
+    // ------------ Policies -------------
+
+    // 1. Get ALL policies
+    @GetMapping("/allPolicies")
+    public ResponseEntity<List<PoliciesEO>> getAllPolicies() {
+        return ResponseEntity.ok(policiesService.getAllPolicies());
+    }
+
+    // 2. Get policies owned by a customer
+    @GetMapping("/policies/{customerId}")
+    public ResponseEntity<List<PoliciesEO>> getPoliciesByCustomerId(@PathVariable Integer customerId) {
+        List<PoliciesEO> policies = policiesService.getPoliciesByCustomerId(customerId);
+        return ResponseEntity.ok(policies);
+    }
+    
+    // ------------ Covers ---------------
+
+    @GetMapping("/allCovers")
+    public ResponseEntity<List<CoversEO>> getAllCovers() {
+        return ResponseEntity.ok(coverService.getAllCovers());
+    }
+
+    @GetMapping("/covers/{customerId}")
+    public ResponseEntity<List<CoversEO>> getCoversByCustomer(@PathVariable Integer customerId) {
+        return ResponseEntity.ok(coverService.getCoversByCustomerId(customerId));
+    }
+    
+    // ------------- Hospitals -----------
+
+    @Autowired
+    private HospitalService hospitalService;
+
+    @GetMapping("/all")
+    public ResponseEntity<List<HospitalEO>> getAllHospitals() {
+        return ResponseEntity.ok(hospitalService.getAllHospitals());
+    }
+
+    @GetMapping("/city/{city}")
+    public ResponseEntity<List<HospitalEO>> getHospitalsByCity(@PathVariable String city) {
+        return ResponseEntity.ok(hospitalService.getHospitalsByCity(city));
+    }  
+}

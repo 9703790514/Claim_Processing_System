@@ -1,0 +1,283 @@
+.medical-container {
+  min-height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.medical-wrapper {
+  padding: 2rem;
+}
+
+.medical-max-width {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.medical-main-card {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background-color: #FFFFFF;
+  border: 2px solid #708090;
+}
+
+.medical-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.medical-header-icon {
+  color: #1A3E72;
+}
+
+.medical-header-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #1A3E72;
+}
+
+.medical-search-section {
+  margin-bottom: 2rem;
+}
+
+.medical-search-label {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #708090;
+  margin-bottom: 0.75rem;
+}
+
+.medical-search-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.medical-search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #708090;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1.125rem;
+  color: #1A3E72;
+  background-color: #FFFFFF;
+  transition: border-color 0.2s;
+}
+
+.medical-search-input:focus {
+  border-color: #008080;
+}
+
+.medical-search-input::placeholder {
+  color: #9CA3AF;
+}
+
+.medical-search-button {
+  padding: 0.75rem 2rem;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  cursor: pointer;
+  background-color: #FFA500;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.medical-search-button:hover:not(:disabled) {
+  background-color: #FF8C00;
+}
+
+.medical-search-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.medical-results-section {
+  margin-top: 2rem;
+}
+
+.medical-not-found {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: #FFE6E6;
+  border: 2px solid #FF6B6B;
+}
+
+.medical-not-found-icon {
+  color: #FF6B6B;
+  margin: 0 auto 1rem auto;
+}
+
+.medical-not-found-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #CC0000;
+}
+
+.medical-not-found-subtitle {
+  margin-top: 0.5rem;
+  color: #990000;
+}
+
+.medical-info-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.medical-info-card {
+  padding: 1.5rem;
+  border: 2px solid;
+  border-radius: 0.5rem;
+}
+
+.medical-patient-info {
+  background-color: #E6F7F7;
+  border-color: #008080;
+}
+
+.medical-vitals-info {
+  background-color: #FFF5E6;
+  border-color: #FFA500;
+}
+
+.medical-allergies-info {
+  background-color: #FFE6E6;
+  border-color: #FF6B6B;
+}
+
+.medical-medications-info {
+  background-color: #E6F3FF;
+  border-color: #2196F3;
+}
+
+.medical-conditions-info {
+  background-color: #F3E5F5;
+  border-color: #9C27B0;
+}
+
+.medical-lab-results-info {
+  background-color: #E8F5E8;
+  border-color: #4CAF50;
+}
+
+.medical-section-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1A3E72;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.medical-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.medical-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.medical-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.medical-info-item {
+  text-align: center;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border-radius: 0.5rem;
+}
+
+.medical-info-label {
+  font-weight: 600;
+  color: #708090;
+  font-size: 0.875rem;
+}
+
+.medical-info-value {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #1A3E72;
+  margin-top: 0.25rem;
+}
+
+.medical-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.medical-tag {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  color: white;
+  font-weight: 500;
+}
+
+.medical-tag-allergy {
+  background-color: #FF6B6B;
+}
+
+.medical-tag-no-allergy {
+  background-color: #4CAF50;
+}
+
+.medical-tag-condition {
+  background-color: #9C27B0;
+}
+
+.medical-medications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.medical-medication-item {
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border: 1px solid #2196F3;
+  border-radius: 0.5rem;
+}
+
+.medical-medication-text {
+  font-weight: 500;
+  color: #1A3E72;
+}
+
+.medical-sample-info {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #F5F5F5;
+  border-radius: 0.5rem;
+}
+
+.medical-sample-text {
+  font-size: 0.875rem;
+  color: #708090;
+}
+
+@media (max-width: 768px) {
+  .medical-search-container {
+    flex-direction: column;
+  }
+
+  .medical-grid-6 {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}

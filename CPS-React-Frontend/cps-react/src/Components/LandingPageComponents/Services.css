@@ -1,0 +1,90 @@
+/* .services {
+  border: 2px solid red;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding: auto;
+}
+
+.cashless {
+  border: 2px solid green;
+  width: 50%;
+}
+
+.reimbursment {
+  border: 2px solid green;
+  width: 50%;
+} */
+
+.services {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 60vh;
+  background: #f8fafc;
+  padding: 3rem 1rem;
+}
+
+.service-card {
+  flex: 1 1 320px;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(30, 58, 138, 0.08);
+  border: 2px solid #e0e7ef;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0.2, 0.2, 1), border-color 0.3s;
+  cursor: pointer;
+  position: relative;
+  min-width: 0;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.15);
+  border-color: #2563eb;
+  background: #e0edff;
+}
+
+.service-card h2 {
+  color: #1e3a8a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.5px;
+}
+
+.service-card ol {
+  padding-left: 1.2rem;
+  color: #374151;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.service-card li {
+  margin-bottom: 0.7rem;
+}
+
+.cashless {
+  border-left: 8px solid #38bdf8;
+}
+
+.reimbursement {
+  border-left: 8px solid #a78bfa;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .services {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 0.5rem;
+  }
+  .service-card {
+    padding: 2rem 1rem;
+  }
+}

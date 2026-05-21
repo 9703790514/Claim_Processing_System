@@ -1,0 +1,52 @@
+package traning.iqgateway.entities;
+
+import java.time.OffsetDateTime;
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+import lombok.Data;
+
+@Data
+@Document(collection = "claims")
+public class ClaimsEO {
+
+    @Id
+    @Field("_id")
+    private Integer id;  // maps _id
+
+    @Field("customer_id")
+    private Integer customerId;
+
+    @Field("hospital_id")
+    private Integer hospitalId;
+
+    @Field("doc_id")
+    private Integer docId;
+
+    @Field("expected_amount")
+    private Integer expectedAmount;
+
+    @Field("approved_amount")
+    private Integer approvedAmount; // can be null
+
+    @Field("submitted_date")
+    private String submittedDate;  // or LocalDate if you want to parse dates
+
+    @Field("last_updated_date")
+    private OffsetDateTime lastUpdatedDate;
+
+    private String status;
+
+    private String feedback;
+
+    private Integer document;
+
+    @Field("medical_valid")
+    private List<Integer> medicalValid;
+
+    @Field("given_policy_id")
+    private Integer givenPolicyId;
+}

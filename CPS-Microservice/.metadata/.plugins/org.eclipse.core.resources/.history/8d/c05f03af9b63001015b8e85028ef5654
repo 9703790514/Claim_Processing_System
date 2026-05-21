@@ -1,0 +1,161 @@
+package traning.iqgateway.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import traning.iqgateway.entities.ClaimsEO;
+import traning.iqgateway.entities.CoversEO;
+import traning.iqgateway.entities.CustomerEO;
+import traning.iqgateway.entities.HospitalsEO;
+import traning.iqgateway.entities.PoliciesEO;
+import traning.iqgateway.service.ClaimsService;
+import traning.iqgateway.service.CoversService;
+import traning.iqgateway.service.CustomerService;
+import traning.iqgateway.service.HospitalService;
+import traning.iqgateway.service.PoliciesService;
+
+@RestController
+@RequestMapping("/customer")
+@CrossOrigin(origins = {"http://localhost:5173", "http://127.0.0.1:5173"}) // Add both variants
+public class CustomerController {
+
+    
+    @Autowired
+    private CustomerService customerService;
+    
+    @Autowired
+    private PoliciesService policiesService;
+    
+    @Autowired
+    private CoversService coverService;
+    
+    @Autowired
+    private HospitalService hospitalService;
+    
+    @Autowired
+    private ClaimsService claimsService;
+
+    // Create customer
+    @PostMapping("/addCustomer")
+    public ResponseEntity<CustomerEO> createCustomer(@RequestBody CustomerEO customer) {
+        CustomerEO createdCustomer = customerService.createCustomer(customer);
+        return ResponseEntity.ok(createdCustomer);
+    }
+
+    // Get all customers
+    @GetMapping("/allCustomer")
+    public ResponseEntity<List<CustomerEO>> getAllCustomers() {
+        List<CustomerEO> customers = customerService.getAllCustomers();
+        return ResponseEntity.ok(customers);
+    }
+
+    // Get customer by id
+    @GetMapping("/{id}")
+    public ResponseEntity<CustomerEO> getCustomerById(@PathVariable Integer id) {
+        return customerService.getCustomerById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    // Update customer
+    @PutMapping("/{id}")
+    public ResponseEntity<CustomerEO> updateCustomer(@PathVariable Integer id, @RequestBody CustomerEO customer) {
+        try {
+            CustomerEO updatedCustomer = customerService.updateCustomer(id, customer);
+            return ResponseEntity.ok(updatedCustomer);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    // Delete customer
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable Integer id) {
+        customerService.deleteCustomer(id);
+        return ResponseEntity.noContent().build();
+    }
+    
+    @GetMapping("/login")
+    public ResponseEntity<List<CustomerEO>> getCustomerByEmailAndPassword(
+            @RequestParam String customer_email, 
+            @RequestParam String customer_password) {
+        
+        List<CustomerEO> customers = customerService.findByEmailAndPassword(customer_email, customer_password);
+        if(customers.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(customers);
+    }
+    
+    // ------------ Policies -------------
+
+    @CrossOrigin(origins = "http://localhost:5173") 
+    @GetMapping("/allPolicies")
+    public ResponseEntity<List<PoliciesEO>> getAllPolicies() {
+        return ResponseEntity.ok(policiesService.getAllPolicies());
+    }
+
+    @GetMapping("/policies/{customerId}")
+    public ResponseEntity<List<PoliciesEO>> getPoliciesByCustomerId(@PathVariable Integer customerId) {
+        List<PoliciesEO> policies = policiesService.getPoliciesByCustomerId(customerId);
+        return ResponseEntity.ok(policies);
+    }
+    
+    // ------------ Covers ---------------
+
+    @CrossOrigin(origins = "http://localhost:5173") 
+    @GetMapping("/allCovers")
+    public ResponseEntity<List<CoversEO>> getAllCovers() {
+        return ResponseEntity.ok(coverService.getAllCovers());
+    }
+
+    @GetMapping("/covers/{customerId}")
+    public ResponseEntity<List<CoversEO>> getCoversByCustomer(@PathVariable Integer customerId) {
+        return ResponseEntity.ok(coverService.getCoversByCustomerId(customerId));
+    }
+    
+    // ------------- Hospitals -----------
+
+    @GetMapping("/allHospitals")
+    public ResponseEntity<List<HospitalsEO>> getAllHospitals() {
+        return ResponseEntity.ok(hospitalService.getAllHospitals());
+    }
+
+    @GetMapping("/city/{city}")
+    public ResponseEntity<List<HospitalsEO>> getHospitalsByCity(@PathVariable String city) {
+        return ResponseEntity.ok(hospitalService.getHospitalsByCity(city));
+    }  
+    
+    // ------------- Raise Claim ----------
+  
+    @GetMapping("/claims/{customerId}")
+    public ResponseEntity<List<ClaimsEO>> getClaimsByCustomerId(@PathVariable Integer customerId) {
+        List<ClaimsEO> claims = claimsService.getClaimsByCustomerId(customerId);
+        if (claims.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(claims);
+    }
+
+    @PostMapping("/addClaims")
+    public ResponseEntity<ClaimsEO> createClaim(@RequestBody ClaimsEO claim) {
+        ClaimsEO savedClaim = claimsService.addClaim(claim);
+        return ResponseEntity.ok(savedClaim);
+    }
+
+    @PutMapping("/{claimId}")
+    public ResponseEntity<ClaimsEO> updateClaim(@PathVariable Integer claimId, @RequestBody ClaimsEO claimUpdate) {
+        ClaimsEO updatedClaim = claimsService.updateClaim(claimId, claimUpdate);
+        return ResponseEntity.ok(updatedClaim);
+    }
+
+    @DeleteMapping("claims/{claimId}")
+    public ResponseEntity<Void> deleteClaim(@PathVariable Integer claimId) {
+        claimsService.deleteClaim(claimId);
+        return ResponseEntity.noContent().build();
+    }
+    
+}

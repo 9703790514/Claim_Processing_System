@@ -1,0 +1,6 @@
+package traning.iqgateway.service;
+
+
+public interface ClaimsService {
+	
+}

@@ -1,0 +1,15 @@
+package traning.iqgateway.service;
+
+import java.util.List;
+
+import traning.iqgateway.entities.ClaimWithDocsDTO;
+import traning.iqgateway.entities.ClaimsEO;
+
+public interface ClaimsService {
+
+	ClaimsEO updateClaimStatus(Integer claimId, String status);
+
+	List<ClaimWithDocsDTO> getClaimsWithDocumentsByStatus(String string);
+
+	
+}

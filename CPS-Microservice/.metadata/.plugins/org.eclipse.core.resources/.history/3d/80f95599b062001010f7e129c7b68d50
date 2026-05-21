@@ -1,0 +1,47 @@
+package traning.iqgateway.serviceImpl;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import traning.iqgateway.entities.CoversEO;
+import traning.iqgateway.entities.CustomerEO;
+import traning.iqgateway.entities.PolicyEntry;
+import traning.iqgateway.repository.CoverRepository;
+import traning.iqgateway.repository.CustomerRepository;
+import traning.iqgateway.service.CoverService;
+
+@Service
+public class CoverServiceImpl implements CoverService {
+
+    @Autowired
+    private CoverRepository coverRepository;
+
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Override
+    public List<CoversEO> getAllCovers() {
+        return coverRepository.findAll();
+    }
+
+    @Override
+    public List<CoversEO> getCoversByCustomerId(Integer customerId) {
+        CustomerEO customer = customerRepository.findById(customerId)
+                .orElseThrow(() -> new RuntimeException("Customer not found with id: " + customerId));
+
+        List<Integer> coverIds = customer.getPolicies()
+                .stream()
+                .map(PolicyEntry::getCoverId)
+                .collect(Collectors.toList());
+
+        if (coverIds.isEmpty()) {
+            return List.of();
+        }
+
+        return coverRepository.findAllById(coverIds);
+    }
+
+}

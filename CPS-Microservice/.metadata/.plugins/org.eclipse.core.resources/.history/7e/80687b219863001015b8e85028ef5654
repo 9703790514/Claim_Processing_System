@@ -1,0 +1,40 @@
+spring.application.name=API-Gateway
+
+server.port = 8899
+
+
+spring.application.name=API-Gateway
+server.port=8899
+
+# Route to Customer Microservice (runs e.g. on port 8989)
+spring.cloud.gateway.routes[0].id=CustomerMicroservice
+spring.cloud.gateway.routes[0].uri=http://localhost:8989
+spring.cloud.gateway.routes[0].predicates[0]=Path=/customer/**
+
+# Route to Document Microservice (runs e.g. on port 8990)
+spring.cloud.gateway.routes[1].id=DocumentMicroservice
+spring.cloud.gateway.routes[1].uri=http://localhost:8990
+spring.cloud.gateway.routes[1].predicates[0]=Path=/documents/**
+
+# Route to Regional Head Microservice (runs e.g. on port 8991)
+spring.cloud.gateway.routes[2].id=RegionalHeadMicroservice
+spring.cloud.gateway.routes[2].uri=http://localhost:8991
+spring.cloud.gateway.routes[2].predicates[0]=Path=/head/**
+
+# CORS configuration for all "/customer/**" endpoints
+spring.cloud.gateway.globalcors.cors-configurations[/customer/**].allowedOrigins=http://localhost:5173
+spring.cloud.gateway.globalcors.cors-configurations[/customer/**].allowedMethods=GET,POST,PUT,DELETE,OPTIONS,PATCH
+spring.cloud.gateway.globalcors.cors-configurations[/customer/**].allowedHeaders=*
+spring.cloud.gateway.globalcors.cors-configurations[/customer/**].allowCredentials=true
+
+# CORS for "/documents/**"
+spring.cloud.gateway.globalcors.cors-configurations[/documents/**].allowedOrigins=http://localhost:5173
+spring.cloud.gateway.globalcors.cors-configurations[/documents/**].allowedMethods=GET,POST,PUT,DELETE,OPTIONS,PATCH
+spring.cloud.gateway.globalcors.cors-configurations[/documents/**].allowedHeaders=*
+spring.cloud.gateway.globalcors.cors-configurations[/documents/**].allowCredentials=true
+
+# CORS for "/head/**"
+spring.cloud.gateway.globalcors.cors-configurations[/head/**].allowedOrigins=http://localhost:5173
+spring.cloud.gateway.globalcors.cors-configurations[/head/**].allowedMethods=GET,POST,PUT,DELETE,OPTIONS,PATCH
+spring.cloud.gateway.globalcors.cors-configurations[/head/**].allowedHeaders=*
+spring.cloud.gateway.globalcors.cors-configurations[/head/**].allowCredentials=true

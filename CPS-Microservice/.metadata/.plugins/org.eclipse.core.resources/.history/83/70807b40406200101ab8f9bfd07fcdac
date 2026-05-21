@@ -1,0 +1,59 @@
+package traning.iqgateway.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import traning.iqgateway.entities.CustomerEO;
+import traning.iqgateway.service.CustomerService;
+
+@RestController
+@RequestMapping("/customer")
+public class CustomerController {
+
+    
+    @Autowired
+    private CustomerService customerService;
+
+    // Create customer
+    @PostMapping("/update")
+    public ResponseEntity<CustomerEO> createCustomer(@RequestBody CustomerEO customer) {
+        CustomerEO createdCustomer = customerService.createCustomer(customer);
+        return ResponseEntity.ok(createdCustomer);
+    }
+
+    // Get all customers
+    @GetMapping
+    public ResponseEntity<List<CustomerEO>> getAllCustomers() {
+        List<CustomerEO> customers = customerService.getAllCustomers();
+        return ResponseEntity.ok(customers);
+    }
+
+    // Get customer by id
+    @GetMapping("/{id}")
+    public ResponseEntity<CustomerEO> getCustomerById(@PathVariable Integer id) {
+        return customerService.getCustomerById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    // Update customer
+    @PutMapping("/{id}")
+    public ResponseEntity<CustomerEO> updateCustomer(@PathVariable Integer id, @RequestBody CustomerEO customer) {
+        try {
+            CustomerEO updatedCustomer = customerService.updateCustomer(id, customer);
+            return ResponseEntity.ok(updatedCustomer);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    // Delete customer
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable Integer id) {
+        customerService.deleteCustomer(id);
+        return ResponseEntity.noContent().build();
+    }
+}

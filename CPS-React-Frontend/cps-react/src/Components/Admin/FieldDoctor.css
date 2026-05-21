@@ -1,0 +1,162 @@
+.fielddoctor {
+  width: 100%;
+  background-color: #ffffff; /* White background */
+  margin-top: 6%;
+}
+ 
+.container {
+  width: 80%;
+  margin: auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 0 15px;
+}
+ 
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1a3e72; /* Navy Blue */
+}
+ 
+.doctor-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(112, 128, 144, 0.1); /* Slate Gray shadow */
+  border-radius: 8px;
+  overflow: hidden;
+}
+ 
+.doctor-table th {
+  background-color: #1a3e72; /* Navy Blue */
+  color: #ffffff; /* White */
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+}
+ 
+.doctor-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #708090; /* Slate Gray */
+}
+ 
+.table-row:hover {
+  background-color: #f0f8ff; /* Light tealish highlight */
+  transition: background-color 0.3s ease;
+}
+ 
+.no-data {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #708090; /* Slate Gray */
+}
+ 
+.btn {
+  padding: 8px 14px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 0.9rem;
+}
+ 
+.update-btn {
+  background-color: #008080; /* Teal */
+  color: #ffffff;
+}
+ 
+.update-btn:hover {
+  background-color: #006666; /* Darker teal */
+}
+ 
+.delete-btn {
+  background-color: #ffa500; /* Soft Orange */
+  color: #1a3e72; /* Navy Blue text */
+}
+ 
+.delete-btn:hover {
+  background-color: #cc8400; /* Darker soft orange */
+  color: #ffffff;
+}
+ 
+.add-btn {
+  background-color: #1a3e72; /* Navy Blue */
+  color: #ffffff;
+}
+ 
+.add-btn:hover {
+  background-color: #16375a; /* Darker Navy Blue */
+}
+ 
+.cancel-btn {
+  background-color: #708090; /* Slate Gray */
+  color: #ffffff;
+}
+ 
+.cancel-btn:hover {
+  background-color: #5a6a75; /* Darker Slate Gray */
+}
+ 
+.form-container {
+  background-color: #ffffff; /* White */
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(112, 128, 144, 0.1); /* Slate Gray shadow */
+}
+ 
+.form-heading {
+  margin-bottom: 20px;
+  color: #1a3e72; /* Navy Blue */
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+ 
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.form-label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #008080; /* Teal */
+}
+ 
+.form-input {
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: 1px solid #708090; /* Slate Gray */
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  color: #1a3e72; /* Navy Blue text */
+  background-color: #ffffff; /* White */
+}
+ 
+.form-input:focus {
+  border: 2px solid;
+  border-color: #ffa500; /* Soft Orange focus */
+}
+ 
+.form-buttons {
+  margin-top: 10px;
+}
+ 
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align left */
+  margin-bottom: 1rem;
+}
+ 
+.checkbox-input {
+  margin-top: 6px; /* Add spacing between label and checkbox */
+  width: auto;
+}

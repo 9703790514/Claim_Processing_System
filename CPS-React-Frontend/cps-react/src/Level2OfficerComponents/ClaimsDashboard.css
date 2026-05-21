@@ -1,0 +1,488 @@
+/* src/components/ClaimsDashboard.css - Enhanced Styling */
+
+/* --- CSS Variables for Theming --- */
+:root {
+    /* Colors */
+    --dashboard-bg-start: #f5fafd; /* Very light blue */
+    --dashboard-bg-end: #e8f3fa;   /* Slightly darker light blue */
+    --paper-bg: #ffffff;
+    --border-light: #dceef7;
+    --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-card-hover: 0 10px 30px rgba(0, 0, 0, 0.12); /* More pronounced hover shadow */
+
+    --text-primary-dark: #2c3e50; /* Dark blue-grey for main text */
+    --text-secondary-light: #7f8c8d; /* Muted grey for secondary text */
+    --text-accent-blue: #2980b9; /* Accent blue for links/buttons */
+    --text-accent-dark: #34495e; /* Darker accent for titles */
+
+    /* Card Specific Colors (re-using where possible from FieldDoctorDashboard) */
+    --card-total-bg-start: #4a69bd; /* Deeper blue */
+    --card-total-bg-end: #34495e; /* Dark blue-grey */
+    --card-total-text: #ffffff;
+
+    --card-raised-bg-start: #f39c12; /* Orange */
+    --card-raised-bg-end: #e67e22;
+    --card-raised-text: #ffffff;
+
+    --card-pending-bg-start: #e74c3c; /* Red */
+    --card-pending-bg-end: #c0392b;
+    --card-pending-text: #ffffff;
+
+    --card-approved-bg-start: #27ae60; /* Green */
+    --card-approved-bg-end: #229954;
+    --card-approved-text: #ffffff;
+
+    --card-settled-bg-start: #1abc9c; /* Turquoise */
+    --card-settled-bg-end: #16a085;
+    --card-settled-text: #ffffff;
+
+    --card-rejected-bg-start: #9b59b6; /* Purple */
+    --card-rejected-bg-end: #8e44ad;
+    --card-rejected-text: #ffffff;
+
+    --card-queried-bg-start: #f1c40f; /* Yellow */
+    --card-queried-bg-end: #f39c12; /* Using orange as end for yellow gradient */
+    --card-queried-text: #333333; /* Darker text for light backgrounds */
+
+
+    /* Spacing - Adjusted for larger cards */
+    --spacing-xs: 10px;
+    --spacing-sm: 20px;
+    --spacing-md: 28px;
+    --spacing-lg: 36px;
+    --spacing-xl: 50px;
+
+    /* Border Radius */
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+
+    /* Header Height (match your Header.jsx/Header.css) */
+    --header-height-desktop: 110px;
+    --header-height-mobile: 80px;
+
+    /* Transitions */
+    --transition-ease: 0.3s ease-in-out;
+}
+
+/* --- Main Page Container --- */
+.claims-dashboard-page-container {
+    padding-top: calc(var(--header-height-desktop) + var(--spacing-lg)); /* Space for fixed header */
+    padding-bottom: var(--spacing-lg);
+    background: linear-gradient(180deg, var(--dashboard-bg-start), var(--dashboard-bg-end));
+    min-height: 100vh; /* Ensure it fills the viewport */
+    font-family: 'Roboto', sans-serif; /* Using Roboto as a common modern font */
+    padding-left: var(--spacing-lg); /* Add horizontal padding to main container */
+    padding-right: var(--spacing-lg); /* Add horizontal padding to main container */
+}
+
+@media (max-width: 900px) {
+    .claims-dashboard-page-container {
+        padding-top: calc(var(--header-height-mobile) + var(--spacing-md));
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+}
+
+/* --- Shared Paper/Card Styles --- */
+/* The commented out .MuiPaper-root block is a good place to check for conflicts later. */
+/* .MuiPaper-root { */
+/* background-color: var(--paper-bg); */
+/* border-radius: var(--border-radius-md); */
+/* box-shadow: var(--shadow-subtle); */
+/* transition: transform var(--transition-ease), box-shadow var(--transition-ease); */
+/* } */
+
+/* --- Loading and Error States --- */
+.dashboard-loading-error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* Centered in available space */
+    text-align: center;
+    color: var(--text-primary-dark);
+}
+
+.dashboard-loading-error .MuiCircularProgress-root {
+    color: var(--text-accent-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.dashboard-loading-error .MuiTypography-root {
+    margin-bottom: var(--spacing-md);
+}
+
+/* --- Claims Dashboard Content (if used as a wrapper) --- */
+/* (This block is often commented out if `claims-dashboard-page-container` is the main wrapper) */
+/* .claims-dashboard-content { */
+/* max-width: 1400px; */
+/* margin: 0 auto; */
+/* padding: var(--spacing-lg); */
+/* } */
+
+/* --- Dashboard Title --- */
+.dashboard-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-accent-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: -0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Back to Cards Button (when table is shown) --- */
+.back-to-cards-btn {
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--text-accent-blue);
+    color: var(--text-accent-blue);
+    padding: 8px 18px;
+    border-radius: var(--border-radius-sm);
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: all var(--transition-ease);
+}
+
+.back-to-cards-btn:hover {
+    background-color: rgba(var(--text-accent-blue), 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- ClaimDetailsCard (Parent Grid Container) --- */
+.claims-card-grid-container {
+    padding: var(--spacing-md); /* Add some padding around the grid */
+    background-color: var(--paper-bg); /* Ensure a base background for the container */
+    border-radius: var(--border-radius-lg); /* Larger border radius for the overall box */
+    box-shadow: var(--shadow-subtle);
+}
+
+/* --- Individual ClaimsCard Styling --- */
+.claims-card {
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06); /* Lighter initial shadow */
+    transition: transform var(--transition-ease), box-shadow var(--transition-ease);
+    display: flex; /* Ensure the whole card is a flex container */
+    flex-direction: column; /* Stack content vertically */
+    /* *** KEY CHANGE: Fixed height for consistent sizing *** */
+    height: 250px; /* Adjust this value as needed for content fit */
+    overflow: hidden; /* Ensure content doesn't bleed if it exceeds fixed height */
+
+    background-color: var(--paper-bg); /* Default background, will be overridden by gradients */
+}
+
+.claims-card .MuiCardActionArea-root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch; /* Stretch content to fill space */
+    height: 100%; /* Ensures action area fills the fixed card height */
+    padding: var(--spacing-md); /* Increased padding inside the action area */
+}
+
+
+.claims-card:hover {
+    transform: translateY(-8px); /* Slightly more pronounced lift */
+    box-shadow: var(--shadow-card-hover); /* Deeper shadow on hover */
+}
+
+.claims-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    padding: var(--spacing-md) !important; /* Override MUI default padding */
+    flex-grow: 1; /* Allow content to take available space */
+    justify-content: center; /* Center content vertically if space allows */
+}
+
+.claims-card-icon-box {
+    width: 80px; /* Increased icon box size */
+    height: 80px; /* Increased icon box size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-md); /* Increased margin below icon */
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent background for icon */
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for icon box */
+}
+
+.claims-card-media {
+    max-width: 70%; /* Adjust if icons look too stretched or small within the larger box */
+    max-height: 70%;
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.claims-card-text-box {
+    flex-grow: 1; /* Allow text box to take remaining space */
+}
+
+.claims-card-title {
+    font-size: 1.3rem; /* Larger title font */
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm); /* Increased margin below title */
+    color: var(--text-primary-dark);
+}
+
+.claims-card-count {
+    font-size: 3.5rem; /* Significantly larger count font */
+    font-weight: 800;
+    color: var(--text-accent-dark); /* Darker color for the count */
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm); /* Increased margin below count */
+}
+
+.claims-card-description {
+    font-size: 0.95rem; /* Slightly larger description font */
+    color: var(--text-secondary-light);
+    line-height: 1.5;
+    /* *** KEY CHANGE: Slightly increased min-height for description *** */
+    min-height: 65px; /* Ensure consistent height for description area */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Specific card type styling - overrides based on className passed from parent */
+/* IMPORTANT: Added !important to background and color properties here */
+.claims-card.card-type-total {
+    background: linear-gradient(135deg, var(--card-total-bg-start), var(--card-total-bg-end)) !important;
+    color: var(--card-total-text) !important;
+}
+.claims-card.card-type-total .claims-card-title,
+.claims-card.card-type-total .claims-card-count,
+.claims-card.card-type-total .claims-card-description {
+    color: inherit !important; /* Inherit text color for better contrast */
+}
+.claims-card.card-type-total .claims-card-media {
+    filter: brightness(1.2); /* Make icon brighter on dark background */
+}
+
+
+.claims-card.card-type-raised {
+    background: linear-gradient(135deg, var(--card-raised-bg-start), var(--card-raised-bg-end)) !important;
+    color: var(--card-raised-text) !important;
+}
+.claims-card.card-type-raised .claims-card-title,
+.claims-card.card-type-raised .claims-card-count,
+.claims-card.card-type-raised .claims-card-description {
+    color: inherit !important;
+}
+.claims-card.card-type-raised .claims-card-media {
+    filter: brightness(1.2);
+}
+
+
+.claims-card.card-type-pending {
+    background: linear-gradient(135deg, var(--card-pending-bg-start), var(--card-pending-bg-end)) !important;
+    color: var(--card-pending-text) !important;
+}
+.claims-card.card-type-pending .claims-card-title,
+.claims-card.card-type-pending .claims-card-count,
+.claims-card.card-type-pending .claims-card-description {
+    color: inherit !important;
+}
+.claims-card.card-type-pending .claims-card-media {
+    filter: brightness(1.2);
+}
+
+
+.claims-card.card-type-approved {
+    background: linear-gradient(135deg, var(--card-approved-bg-start), var(--card-approved-bg-end)) !important;
+    color: var(--card-approved-text) !important;
+}
+.claims-card.card-type-approved .claims-card-title,
+.claims-card.card-type-approved .claims-card-count,
+.claims-card.card-type-approved .claims-card-description {
+    color: inherit !important;
+}
+.claims-card.card-type-approved .claims-card-media {
+    filter: brightness(1.2);
+}
+
+
+.claims-card.card-type-settled {
+    background: linear-gradient(135deg, var(--card-settled-bg-start), var(--card-settled-bg-end)) !important;
+    color: var(--card-settled-text) !important;
+}
+.claims-card.card-type-settled .claims-card-title,
+.claims-card.card-type-settled .claims-card-count,
+.claims-card.card-type-settled .claims-card-description {
+    color: inherit !important;
+}
+.claims-card.card-type-settled .claims-card-media {
+    filter: brightness(1.2);
+}
+
+
+.claims-card.card-type-rejected {
+    background: linear-gradient(135deg, var(--card-rejected-bg-start), var(--card-rejected-bg-end)) !important;
+    color: var(--card-rejected-text) !important;
+}
+.claims-card.card-type-rejected .claims-card-title,
+.claims-card.card-type-rejected .claims-card-count,
+.claims-card.card-type-rejected .claims-card-description {
+    color: inherit !important;
+}
+.claims-card.card-type-rejected .claims-card-media {
+    filter: brightness(1.2);
+}
+
+
+.claims-card.card-type-queried {
+    background: linear-gradient(135deg, var(--card-queried-bg-start), var(--card-queried-bg-end)) !important;
+    color: var(--card-queried-text) !important; /* Ensure good contrast for text on yellow */
+}
+.claims-card.card-type-queried .claims-card-title,
+.claims-card.card-type-queried .claims-card-count,
+.claims-card.card-type-queried .claims-card-description {
+    color: var(--card-queried-text) !important; /* Explicitly set color */
+}
+.claims-card.card-type-queried .claims-card-media {
+    filter: grayscale(0.2) brightness(0.8); /* Slightly dim/desaturate icon on light background */
+}
+
+
+/* --- ClaimsTable specific styles (within the component if possible, or here) --- */
+/* Assuming ClaimsTable component has its own styles or wraps content in a Paper */
+.claims-table-wrapper {
+    /* Styles for the container holding the table if not already a Paper */
+    padding: var(--spacing-md);
+    background-color: var(--paper-bg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-subtle);
+}
+
+.claims-table-wrapper .MuiTabs-root {
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.claims-table-wrapper .MuiTab-root {
+    font-weight: 600;
+    text-transform: none; /* Prevent uppercase by default */
+    color: var(--text-secondary-light);
+}
+
+.claims-table-wrapper .MuiTab-root.Mui-selected {
+    color: var(--text-accent-blue);
+}
+
+.claims-table-wrapper .MuiInputBase-root {
+    margin-bottom: var(--spacing-md);
+}
+
+.claims-table-wrapper .MuiTableHead-root {
+    background-color: #f8f8f8; /* Light background for table header */
+}
+
+.claims-table-wrapper .MuiTableCell-head {
+    font-weight: 700;
+    color: var(--text-primary-dark);
+    font-size: 0.95rem;
+}
+
+.claims-table-wrapper .MuiTableCell-body {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments for cards and table */
+@media (max-width: 1200px) { /* Laptops and smaller desktops */
+    .claims-card {
+        height: 220px; /* Fixed height for this breakpoint */
+    }
+    .claims-card .MuiCardActionArea-root {
+        padding: var(--spacing-sm);
+    }
+    .claims-card-icon-box {
+        width: 70px; /* Adjusted icon box size */
+        height: 70px; /* Adjusted icon box size */
+        margin-bottom: var(--spacing-sm);
+    }
+    .claims-card-count {
+        font-size: 3rem; /* Adjusted font size */
+    }
+    .claims-card-title {
+        font-size: 1.2rem; /* Adjusted font size */
+    }
+    .claims-card-description {
+        font-size: 0.9rem; /* Adjusted font size */
+        min-height: 50px; /* Adjusted min-height */
+    }
+}
+
+@media (max-width: 900px) { /* Tablets (landscape) - Still aiming for 3 per row (md={4}) */
+    .claims-dashboard-page-container {
+        padding-top: calc(var(--header-height-mobile) + var(--spacing-md));
+    }
+    .claims-card-grid-container {
+        padding: var(--spacing-sm);
+    }
+    .claims-card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Lighter shadow on smaller screens */
+        height: 200px; /* Fixed height for this breakpoint */
+    }
+    .claims-card .MuiCardActionArea-root {
+        padding: var(--spacing-sm);
+    }
+    .claims-card-icon-box {
+        width: 60px; /* Adjusted icon box size */
+        height: 60px; /* Adjusted icon box size */
+        margin-bottom: var(--spacing-xs);
+    }
+    .claims-card-count {
+        font-size: 2.5rem; /* Adjusted font size */
+    }
+    .claims-card-title {
+        font-size: 1.1rem; /* Adjusted font size */
+    }
+    .claims-card-description {
+        font-size: 0.85rem; /* Adjusted font size */
+        min-height: 45px; /* Adjusted min-height */
+    }
+}
+
+@media (max-width: 600px) { /* Mobile phones (portrait) - Will be 1 card per row (xs={12}) */
+    .dashboard-title {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-md);
+    }
+    .claims-dashboard-page-container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+    .claims-card-grid-container {
+        padding: var(--spacing-xs);
+    }
+    .claims-card {
+        padding: var(--spacing-xs) 0; /* Minimal padding for very small cards */
+        height: 180px; /* Fixed height for this breakpoint */
+    }
+    .claims-card .MuiCardActionArea-root {
+        padding: var(--spacing-xs);
+    }
+    .claims-card-icon-box {
+        width: 50px; /* Adjusted icon box size */
+        height: 50px; /* Adjusted icon box size */
+        margin-bottom: var(--spacing-xs);
+    }
+    .claims-card-count {
+        font-size: 2.2rem; /* Adjusted font size */
+    }
+    .claims-card-title {
+        font-size: 1rem; /* Adjusted font size */
+    }
+    .claims-card-description {
+        font-size: 0.8rem; /* Adjusted font size */
+        min-height: 40px; /* Adjusted min-height */
+    }
+    .back-to-cards-btn {
+        width: 100%;
+    }
+}

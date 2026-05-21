@@ -1,0 +1,9 @@
+package traning.iqgateway.repository;
+
+
+import traning.iqgateway.entities.CustomerEO;
+
+@Repository
+public interface CustomerRepository extends MongoRepository<CustomerEO, Integer>{
+ 
+}

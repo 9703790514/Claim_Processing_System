@@ -1,0 +1,125 @@
+/* Header.css */
+
+:root {
+    --header-height-desktop: 80px;
+    --header-height-mobile: 60px;
+    --primary-main: #1976d2; /* Example primary color */
+    --accent-aqua: #00ffff; /* Example accent color */
+    --text-light: #ffffff; /* Example light text color */
+}
+
+.header-appbar {
+    background-color: var(--primary-main); /* Example background color */
+}
+
+.header-toolbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    min-height: var(--header-height-desktop);
+    position: relative;
+}
+
+/* Updated styles for the logo section */
+.header-logo-section {
+    display: flex;
+    align-items: center;
+    /* Removed position: static !important; */
+    margin-right: 25px; /* Keep existing margin if needed for spacing with other elements */
+    position: absolute; /* Add absolute positioning */
+    left: 0; /* Place to the extreme left */
+    transform: translateX(0); /* Reset transform if any */
+    z-index: 2; /* Ensure it's above other elements if necessary */
+}
+
+
+.header-logo-image {
+    height: 60px;
+    width: 60px;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
+    transition: filter 0.3s ease-in-out;
+}
+
+.header-logo-image:hover {
+    filter: drop-shadow(0 0 15px var(--accent-aqua));
+}
+
+.header-logo-text {
+    margin-left: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.35rem;
+    color: var(--text-light);
+    text-decoration: none;
+    user-select: none;
+    display: none;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease-in-out;
+}
+
+.header-logo-text:hover {
+    color: #FFFFFF;
+}
+
+/* Remove hover color for user avatar button (no specific class in your HTML for it) */
+/* If you want to target the avatar specifically, you'd need to add a class to the Avatar component itself or target it via its parent */
+.header-user-avatar-button:hover {
+    /* No change in background or color on hover */
+    background-color: transparent; /* Or whatever default you prefer */
+}
+
+
+@media (min-width: 960px) {
+    .header-logo-text {
+        display: flex;
+    }
+}
+
+@media (max-width: 959px) {
+    .header-toolbar {
+        min-height: var(--header-height-mobile);
+        justify-content: space-between;
+    }
+    .header-logo-image {
+        height: 50px;
+        width: 50px;
+    }
+    .header-logo-text {
+        display: none !important;
+    }
+}
+
+/* Styles for the tooltip content */
+.avatar-tooltip-content {
+    background-color: var(--text-light); /* Assuming a light background for the tooltip */
+    color: #333; /* Darker text for readability on light background */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    white-space: pre-wrap; /* To respect \n for new lines */
+    box-sizing: border-box;
+}
+
+.tooltip-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--primary-main);
+}
+
+.tooltip-details {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.tooltip-logout-button {
+    background-color: white;
+    background: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.header-avatar-tooltip-popper .MuiTooltip-arrow {
+    color: var(--text-light); /* Ensures the arrow matches the tooltip background */
+}

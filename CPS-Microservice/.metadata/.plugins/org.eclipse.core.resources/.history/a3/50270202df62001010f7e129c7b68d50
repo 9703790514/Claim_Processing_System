@@ -1,0 +1,18 @@
+package traning.iqgateway.service;
+
+import java.util.List;
+
+public interface ClaimsService {
+
+	// 1) Fetch all claims for a customer
+	List<ClaimsEO> getClaimsByCustomerId(Integer customerId);
+
+	// 2) Add new claim (id, doc_id auto-set)
+	ClaimsEO addClaim(ClaimsEO claim);
+
+	// 3) Update claim, with restrictions as you specified
+	ClaimsEO updateClaim(Integer claimId, ClaimsEO claimUpdate);
+
+	// 4) Delete claim by id
+	void deleteClaim(Integer claimId);
+}

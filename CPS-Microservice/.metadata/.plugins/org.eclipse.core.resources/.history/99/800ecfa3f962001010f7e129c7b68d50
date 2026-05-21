@@ -1,0 +1,36 @@
+//package traning.iqgateway.entities;
+//
+//import org.springframework.data.mongodb.core.mapping.Field;
+//
+//public class PolicyEntry {
+//
+//    @Field("policy_id")
+//    private Integer policyId;
+//
+//    @Field("cover_id")
+//    private Integer coverId;
+//
+//    public PolicyEntry() {
+//    }
+//
+//    public PolicyEntry(Integer policyId, Integer coverId) {
+//        this.policyId = policyId;
+//        this.coverId = coverId;
+//    }
+//
+//    public Integer getPolicyId() {
+//        return policyId;
+//    }
+//
+//    public void setPolicyId(Integer policyId) {
+//        this.policyId = policyId;
+//    }
+//
+//    public Integer getCoverId() {
+//        return coverId;
+//    }
+//
+//    public void setCoverId(Integer coverId) {
+//        this.coverId = coverId;
+//    }
+//}

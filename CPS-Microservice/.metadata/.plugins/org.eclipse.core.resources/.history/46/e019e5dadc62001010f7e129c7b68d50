@@ -1,0 +1,155 @@
+package traning.iqgateway.entities;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+@Document(collection = "claims")
+public class ClaimsEO {
+
+    @Id
+    @Field("_id")
+    private Integer id;
+
+    @Field("customer_id")
+    private Integer customerId;
+
+    @Field("hospital_id")
+    private Integer hospitalId;
+
+    @Field("doc_id")
+    private Integer docId;  // Reference to document ID returned by Documents microservice
+
+    @Field("expected_amount")
+    private Double expectedAmount;
+
+    @Field("approved_amount")
+    private Double approvedAmount;
+
+    @Field("submitted_date")
+    private LocalDate submittedDate;
+
+    @Field("last_updated_date")
+    private LocalDateTime lastUpdatedDate;
+
+    @Field("status")
+    private String status;
+
+    @Field("feedback")
+    private String feedback;
+
+    @Field("document")
+    private Integer document; // Looks duplicate of docId? But keeping as per your schema
+
+    @Field("medical_valid")
+    private List<Integer> medicalValid;
+
+    @Field("given_policy_id")
+    private Integer givenPolicyId;
+
+    // constructors, getters & setters
+
+    public ClaimsEO() {}
+
+    public ClaimsEO(Integer id, Integer customerId, Integer hospitalId, Integer docId, Double expectedAmount,
+                    Double approvedAmount, LocalDate submittedDate, LocalDateTime lastUpdatedDate, String status,
+                    String feedback, Integer document, List<Integer> medicalValid, Integer givenPolicyId) {
+        this.id = id;
+        this.customerId = customerId;
+        this.hospitalId = hospitalId;
+        this.docId = docId;
+        this.expectedAmount = expectedAmount;
+        this.approvedAmount = approvedAmount;
+        this.submittedDate = submittedDate;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.status = status;
+        this.feedback = feedback;
+        this.document = document;
+        this.medicalValid = medicalValid;
+        this.givenPolicyId = givenPolicyId;
+    }
+
+    // getters and setters below ...
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public Integer getCustomerId() {
+        return customerId;
+    }
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
+    public Integer getHospitalId() {
+        return hospitalId;
+    }
+    public void setHospitalId(Integer hospitalId) {
+        this.hospitalId = hospitalId;
+    }
+    public Integer getDocId() {
+        return docId;
+    }
+    public void setDocId(Integer docId) {
+        this.docId = docId;
+    }
+    public Double getExpectedAmount() {
+        return expectedAmount;
+    }
+    public void setExpectedAmount(Double expectedAmount) {
+        this.expectedAmount = expectedAmount;
+    }
+    public Double getApprovedAmount() {
+        return approvedAmount;
+    }
+    public void setApprovedAmount(Double approvedAmount) {
+        this.approvedAmount = approvedAmount;
+    }
+    public LocalDate getSubmittedDate() {
+        return submittedDate;
+    }
+    public void setSubmittedDate(LocalDate submittedDate) {
+        this.submittedDate = submittedDate;
+    }
+    public LocalDateTime getLastUpdatedDate() {
+        return lastUpdatedDate;
+    }
+    public void setLastUpdatedDate(LocalDateTime lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public String getFeedback() {
+        return feedback;
+    }
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
+    public Integer getDocument() {
+        return document;
+    }
+    public void setDocument(Integer document) {
+        this.document = document;
+    }
+    public List<Integer> getMedicalValid() {
+        return medicalValid;
+    }
+    public void setMedicalValid(List<Integer> medicalValid) {
+        this.medicalValid = medicalValid;
+    }
+    public Integer getGivenPolicyId() {
+        return givenPolicyId;
+    }
+    public void setGivenPolicyId(Integer givenPolicyId) {
+        this.givenPolicyId = givenPolicyId;
+    }
+}

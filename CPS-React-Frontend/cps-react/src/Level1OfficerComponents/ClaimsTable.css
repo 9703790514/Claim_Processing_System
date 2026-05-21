@@ -1,0 +1,332 @@
+/* ClaimsTable.css - Enhanced for Beauty */
+
+/*
+    Welcome to the enhanced ClaimsTable.css!
+    This stylesheet is designed to give your claims table a modern, clean,
+    and visually appealing look, while maintaining responsiveness.
+
+    Key improvements include:
+    - Refined color palette with gradients for status tags.
+    - Consistent spacing and typography.
+    - Subtle hover effects and transitions for a smooth user experience.
+    - Improved shadow and border treatments for a premium feel.
+    - Better responsiveness for various screen sizes.
+    - Comprehensive use of CSS variables for easy theming.
+*/
+
+/* --- Base Variables: Your Design System Colors --- */
+:root {
+    --primary-blue: #2A5C99;            /* Main brand blue */
+    --secondary-blue: #1A3E72;          /* Darker brand blue */
+    --accent-aqua: #00BCD4;             /* Brighter, more modern aqua for accents */
+    --table-bg-light: #FFFFFF;          /* Pure white for table background */
+    --table-header-bg: #F8FAFC;         /* Very light blue-gray for header background */
+    --text-primary: #334155;            /* Darker text for primary headings/content */
+    --text-secondary: #64748B;          /* Muted gray for secondary text/details */
+    --border-light: #E2E8F0;            /* Subtle light gray for borders */
+    --hover-bg: #F0F4F8;                /* Gentle light blue-gray on hover */
+    --shadow-light: rgba(17, 25, 33, 0.05); /* Light shadow for subtle depth */
+    --shadow-medium: rgba(17, 25, 33, 0.1); /* Medium shadow for elevation */
+}
+
+/* --- Global Material-UI Overrides & Base Styling --- */
+
+.MuiTableContainer-root {
+    border-radius: 12px; /* Consistent rounded corners */
+    box-shadow: 0 4px 20px var(--shadow-light); /* Softer, more dispersed shadow */
+    background: var(--table-bg-light);
+    overflow-x: auto; /* Ensures horizontal scrolling on smaller screens if content overflows */
+    border: 1px solid var(--border-light); /* Adds a subtle, defined edge */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadows */
+}
+
+.MuiTableContainer-root:hover {
+    box-shadow: 0 6px 25px var(--shadow-medium); /* Slightly more pronounced shadow on hover */
+}
+
+/* --- Custom Scrollbar Styling (Webkit Browsers) --- */
+.MuiTableContainer-root::-webkit-scrollbar {
+    height: 8px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.MuiTableContainer-root::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1; /* Muted scrollbar thumb */
+    border-radius: 4px;
+}
+
+.MuiTableContainer-root::-webkit-scrollbar-thumb:hover {
+    background-color: #a0aec0; /* Darker on hover */
+}
+
+/* --- Table Header Styling --- */
+.MuiTableHead-root th {
+    background: var(--table-header-bg);
+    font-weight: 600; /* Bolder, but not excessively heavy */
+    font-size: 0.95rem; /* Slightly refined font size */
+    color: var(--text-primary); /* Stronger text for headers */
+    padding: 16px 15px; /* Comfortable padding */
+    border-bottom: 2px solid var(--border-light); /* Clearer header separator */
+    text-transform: uppercase; /* Subtle uppercase */
+    letter-spacing: 0.04em; /* Enhanced letter spacing */
+    white-space: nowrap; /* Prevent headers from wrapping */
+}
+
+/* --- Table Row & Cell Styling --- */
+.MuiTableRow-root {
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-out; /* Smooth transitions for hover */
+    /* Add subtle striped effect */
+    background-color: var(--table-bg-light);
+}
+
+.MuiTableRow-root:nth-of-type(even) {
+    background-color: #FDFEFE; /* Very subtle light gray for even rows */
+}
+
+.MuiTableRow-root:hover {
+    background: var(--hover-bg); /* Soft, consistent hover background */
+    transform: translateY(-1px); /* Slight lift effect on hover (New!) */
+    box-shadow: inset 3px 0 0 var(--primary-blue); /* Subtle blue highlight on hover */
+}
+
+.MuiTableCell-root {
+    font-size: 0.9rem; /* Standard readable font size */
+    padding: 12px 15px; /* Consistent padding */
+    color: var(--text-secondary); /* Softer text color for cell content */
+    border-bottom: 1px solid var(--border-light); /* Consistent border for rows */
+}
+
+.MuiTableCell-root:last-child {
+    min-width: 150px; /* Ample space for action buttons */
+}
+
+/* --- Status Tag Styles --- */
+.status-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px; /* Balanced padding for pill shape */
+    border-radius: 25px; /* Perfectly rounded pill shape */
+    font-size: 0.85em; /* Slightly smaller for tags */
+    font-weight: 600; /* Medium bold */
+    letter-spacing: 0.03em; /* Tighter letter spacing for tags */
+    color: #fff; /* White text for contrast */
+    text-transform: capitalize;
+    min-width: 150px; /* Ensure minimum width for consistency */
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for tags */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect for status tags (New!) */
+.status-tag:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Refined color palette for status tags with subtle gradients */
+.status-raised {
+    background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); /* Blue gradient */
+}
+
+.status-pending {
+    background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%); /* Orange gradient */
+}
+
+.status-approved {
+    background: linear-gradient(135deg, #10B981 0%, #34D399 100%); /* Green gradient */
+}
+
+.status-settled {
+    background: linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%); /* Cyan/teal gradient */
+}
+
+.status-rejected {
+    background: linear-gradient(135deg, #EF4444 0%, #F87171 100%); /* Standard Red gradient */
+}
+
+.status-approved_by_field_doctor{
+    background: linear-gradient(135deg, #8BC34A 0%, #AED581 100%); /* Lighter Green for FD approval */
+    color: #333; /* Darker text for better contrast on light green */
+}
+
+.status-queried{
+    background: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%); /* Yellow/Amber for queried */
+    color: #333; /* Dark text for contrast */
+}
+
+/* --- NEW: Specific Rejected Status Colors --- */
+
+.status-rejected_by_field_doctor {
+    background: linear-gradient(135deg, #E57373 0%, #EF9A9A 100%); /* Softer, slightly muted red for FD rejection */
+    color: #ffffff; /* White text */
+}
+
+.status-rejected_by_l1_officer {
+    background: linear-gradient(135deg, #D32F2F 0%, #EF5350 100%); /* Stronger, more direct red for L1 rejection */
+    color: #ffffff; /* White text */
+}
+
+.status-approved_by_level2_officer {
+    background: linear-gradient(135deg, #42A5F5 0%, #64B5F6 100%); /* A distinct blue for L2 approval */
+    color: #ffffff;
+}
+
+
+/* Icons within table cells (New!) */
+.MuiTableCell-root .MuiSvgIcon-root {
+    vertical-align: middle; /* Align icons nicely with text */
+    margin-right: 4px;
+    font-size: 1.2rem; /* Consistent icon size */
+}
+
+
+/* --- Search Bar & TextField Styles --- */
+.MuiTextField-root .MuiOutlinedInput-root {
+    background: var(--table-header-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 1px 6px var(--shadow-light); /* Initial subtle shadow */
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused {
+    background: var(--table-bg-light);
+    box-shadow: 0 0 0 3px var(--accent-aqua), 0 2px 8px var(--shadow-medium); /* Aqua ring and stronger shadow on focus */
+    border-color: var(--accent-aqua);
+}
+
+.MuiTextField-root .MuiOutlinedInput-notchedOutline {
+    border-color: var(--border-light);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: var(--primary-blue); /* Blue border on hover */
+}
+
+.MuiInputLabel-root {
+    color: var(--text-secondary); /* Label color */
+}
+
+/* --- Tabs Styling --- */
+.MuiTabs-root {
+    background: var(--table-header-bg);
+    border-radius: 12px 12px 0 0; /* Rounded top corners */
+    min-height: 52px; /* Comfortable tab height */
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px var(--shadow-light); /* Subtle shadow for tabs */
+    border-bottom: 1px solid var(--border-light); /* Separator from content below */
+    padding-top: 5px; /* Small padding at the top */
+}
+
+.MuiTab-root {
+    font-weight: 600; /* Medium bold */
+    font-size: 0.95rem; /* Consistent font size */
+    min-width: 120px; /* Ample width for tabs */
+    color: var(--text-secondary); /* Default tab text color */
+    text-transform: capitalize;
+    opacity: 0.8; /* Slightly muted when not selected */
+    transition: all 0.3s ease-in-out;
+    padding: 10px 18px; /* Adjusted padding */
+}
+
+.MuiTab-root.Mui-selected {
+    color: var(--primary-blue) !important; /* Prominent color for selected tab */
+    opacity: 1;
+    background-color: var(--table-bg-light); /* White background for selected tab */
+    border-radius: 10px 10px 0 0; /* Match container border radius more closely */
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.08); /* Stronger shadow for selected tab */
+}
+
+.MuiTabs-indicator {
+    background-color: var(--accent-aqua) !important; /* Vibrant aqua indicator */
+    height: 3px; /* Slightly thinner indicator */
+    border-radius: 1.5px 1.5px 0 0; /* Rounded top corners for indicator */
+}
+
+/* --- Action Button Styling within Table Cells --- */
+.MuiTableCell-root .MuiButton-root {
+    padding: 6px 12px; /* Compact button size */
+    font-size: 0.8em; /* Smaller font for actions */
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 6px; /* Slightly rounded corners for buttons */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle button shadow */
+    transition: all 0.2s ease-in-out;
+}
+
+.MuiTableCell-root .MuiButton-root:hover {
+    transform: translateY(-1px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .MuiTableHead-root th,
+    .MuiTableCell-root {
+        font-size: 0.85rem; /* Smaller font on medium screens */
+        padding: 10px 10px; /* Adjusted padding */
+    }
+    .MuiTab-root {
+        min-width: 110px; /* Adjusted min-width for tablet-like screens */
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    .status-tag {
+        padding: 4px 10px; /* Smaller tags */
+        font-size: 0.75em;
+        min-width: 65px;
+    }
+    .MuiTableCell-root:last-child {
+        min-width: 120px; /* Less space for actions */
+    }
+}
+
+@media (max-width: 600px) {
+    .MuiTableHead-root th,
+    .MuiTableCell-root {
+        font-size: 0.8rem; /* Even smaller font for mobile */
+        padding: 8px 8px; /* Reduced padding */
+    }
+    .MuiTab-root {
+        min-width: unset; /* Allow tabs to shrink as needed */
+        flex-grow: 1; /* Distribute space evenly */
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 6px 8px;
+    }
+    .MuiTabs-root {
+        min-height: 44px; /* Shorter tabs on very small screens */
+        padding-top: 0;
+    }
+    .MuiTableContainer-root {
+        border-radius: 8px; /* Slightly less rounded corners on small screens */
+    }
+    .MuiTableCell-root .MuiButton-root {
+        padding: 5px 8px; /* More compact buttons */
+        font-size: 0.75em;
+    }
+    .status-tag {
+        font-size: 0.7em;
+        min-width: 55px;
+        padding: 3px 8px;
+    }
+}
+
+/* --- Empty Message Styling --- */
+.MuiTypography-root[color="text.secondary"] { /* Target the "No claims found" typography */
+    opacity: 0.9; /* Make it more visible */
+    color: var(--text-secondary);
+    font-style: italic;
+    padding: 30px; /* Generous padding */
+    text-align: center;
+    border: 1px dashed var(--border-light); /* Dashed border for visual cue */
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: #FDFDFE; /* Very light background */
+}

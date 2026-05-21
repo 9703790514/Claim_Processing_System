@@ -1,0 +1,154 @@
+/* Container and layout */
+.medical-container {
+  min-height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.medical-wrapper {
+  padding: 2rem;
+}
+
+.medical-max-width {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.medical-main-card {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background-color: #FFFFFF;
+  border: 2px solid #708090;
+}
+
+.medical-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.main-title {
+  color: #1A3E72;
+  font-size: 1.875rem; /* 3xl */
+  font-weight: 700;
+}
+
+/* Form layout */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: #708090;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* Inputs */
+.form-input,
+.form-select,
+.form-textarea {
+  background-color: #FFFFFF;
+  border: 2px solid #708090;
+  color: #1A3E72;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  padding: 12px 16px;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #008080;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Submit button */
+.submit-container {
+  padding-top: 1.5rem;
+}
+
+.submit-btn {
+  width: 25%;
+  padding: 16px;
+  background-color: #FFA500;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #FF8C00;
+}
+
+/* Info Box */
+.info-box {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #E6F7F7;
+  border: 2px solid #008080;
+}
+
+.info-title {
+  color: #1A3E72;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.info-text {
+  color: #708090;
+  font-size: 14px;
+  line-height: 1.5;
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-text li::before {
+  content: "•";
+  color: #008080;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
